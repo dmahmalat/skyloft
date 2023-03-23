@@ -12,8 +12,8 @@ spec:
       keySecretRef:
         name: eab-dev.skyloft.cc
         key: secret
-    privateKeySecretRef:
-      name: acme-dev.skyloft.cc
+    # privateKeySecretRef:
+    #   name: acme-dev.skyloft.cc
     solvers:
     - http01:
         ingress:
