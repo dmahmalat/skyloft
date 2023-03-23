@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: skyloft-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: dev
+    directory:
+      recurse: false
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=false
+    automated:
+      selfHeal: true
+      prune: true
