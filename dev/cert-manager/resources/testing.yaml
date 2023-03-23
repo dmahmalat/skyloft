@@ -15,6 +15,10 @@ spec:
     disableAccountKeyGeneration: false
     privateKeySecretRef:
       name: acme-dev.skyloft.cc
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
 
 ---
 apiVersion: cert-manager.io/v1
