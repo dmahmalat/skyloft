@@ -9,6 +9,7 @@ spec:
     server: https://dv.acme-v02.api.pki.goog/directory
     externalAccountBinding:
       keyID: a5427bdfd10d76338eeb6c421137a389
+      keyAlgorithm: HS256
       keySecretRef:
         name: eab-dev.skyloft.cc
         key: secret
