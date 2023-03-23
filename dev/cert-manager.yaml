@@ -8,6 +8,9 @@ spec:
   sources:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
+    path: dev/cert-manager/resources
+    directory:
+      recurse: true
     ref: skyloft
   - repoURL: https://charts.jetstack.io
     targetRevision: v1.3.1
