@@ -45,14 +45,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: tagspaces
+  name: argocd
   namespace: core-services
 spec:
   ports:
   - port: 80
     protocol: TCP
   selector:
-    run: tagspaces
+    app.kubernetes.io/name: argocd-server
 
 ---
 apiVersion: apps/v1
