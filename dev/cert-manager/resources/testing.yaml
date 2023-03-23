@@ -27,8 +27,8 @@ metadata:
   name: argocd
   namespace: core-services
 spec:
-  tls:
-  - secretName: dev.skyloft.cc
+  # tls:
+  # - secretName: dev.skyloft.cc
   rules:
   - host: dev.skyloft.cc
     http:
