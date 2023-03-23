@@ -97,10 +97,10 @@ spec:
           containerPort: 8080
         - name: dns-tcp
           containerPort: 8053
-          hostPort: 53
+          #hostPort: 53
         - name: dns-udp
           containerPort: 8053
-          hostPort: 53
+          #hostPort: 53
           protocol: UDP
         volumeMounts:
         - mountPath: /etc/acme-dns
