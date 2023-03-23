@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: tagspaces
-        image: exagone313/acme-dns
+        image: exagone313/acme-dns-sidecar
         ports:
         - containerPort: 80
