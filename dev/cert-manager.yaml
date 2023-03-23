@@ -13,6 +13,16 @@ spec:
       parameters:
         - name: installCRDs
           value: "true"
+        - name: tolerations
+          value:
+            - key: CriticalAddonsOnly
+              operator: Exists
+            - key: node-role.kubernetes.io/control-plane
+              operator: Exists
+              effect: NoSchedule
+            - key: node-role.kubernetes.io/master
+              operator: Exists
+              effect: NoSchedule
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services
