@@ -69,7 +69,7 @@ metadata:
   namespace: core-services
 spec:
   tls:
-  - secretName: dev.skyloft.cc
+  - secretName: argo.dev.skyloft.cc
   rules:
   - host: argo.dev.skyloft.cc
     http:
