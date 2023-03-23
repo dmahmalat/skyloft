@@ -11,7 +11,7 @@ spec:
     chart: cert-manager
     helm:
       valueFiles:
-      - cert-manager/values.yaml
+      - dev/cert-manager/values.yaml
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services
