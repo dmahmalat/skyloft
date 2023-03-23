@@ -67,6 +67,8 @@ kind: Ingress
 metadata:
   name: argocd
   namespace: core-services
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-https@kubernetescrd
 spec:
   tls:
   - secretName: argo.dev.skyloft.cc
@@ -81,3 +83,13 @@ spec:
             name: argocd-server
             port:
               number: 80
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-https
+  namespace: core-services
+spec:
+  redirectScheme:
+    scheme: https
