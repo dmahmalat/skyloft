@@ -27,9 +27,34 @@ metadata:
   namespace: core-services
 spec:
   dnsNames:
-    - "*.dev.skyloft.cc"
-    - "dev.skyloft.cc"
+    - dev.skyloft.cc
   secretName: dev.skyloft.cc
+  issuerRef:
+    name: dev.skyloft.cc
+    kind: ClusterIssuer
+
+---
+kind: Certificate
+metadata:
+  name: argo.dev.skyloft.cc
+  namespace: core-services
+spec:
+  dnsNames:
+    - argo.dev.skyloft.cc
+  secretName: argo.dev.skyloft.cc
+  issuerRef:
+    name: dev.skyloft.cc
+    kind: ClusterIssuer
+
+---
+kind: Certificate
+metadata:
+  name: potate.dev.skyloft.cc
+  namespace: core-services
+spec:
+  dnsNames:
+    - potate.dev.skyloft.cc
+  secretName: potate.dev.skyloft.cc
   issuerRef:
     name: dev.skyloft.cc
     kind: ClusterIssuer
