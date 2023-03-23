@@ -2,9 +2,19 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: selfsigned
+  name: dev.skyloft.cc
 spec:
-  selfSigned: {}
+   acme:
+    email: dany@mahmalat.com
+    server: https://dv.acme-v02.api.pki.goog/directory
+    externalAccountBinding:
+      keyID: a5427bdfd10d76338eeb6c421137a389
+      keySecretRef:
+        name: eab-dev.skyloft.cc
+        key: secret
+    disableAccountKeyGeneration: false
+    privateKeySecretRef:
+      name: acme-dev.skyloft.cc
 
 ---
 apiVersion: cert-manager.io/v1
@@ -17,7 +27,7 @@ spec:
     - dev.skyloft.cc
   secretName: dev.skyloft.cc
   issuerRef:
-    name: selfsigned
+    name: dev.skyloft.cc
     kind: ClusterIssuer
 
 ---
