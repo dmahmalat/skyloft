@@ -34,6 +34,7 @@ spec:
     kind: ClusterIssuer
 
 ---
+apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: argo.dev.skyloft.cc
@@ -47,6 +48,7 @@ spec:
     kind: ClusterIssuer
 
 ---
+apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: potate.dev.skyloft.cc
