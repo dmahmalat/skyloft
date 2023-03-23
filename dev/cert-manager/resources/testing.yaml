@@ -8,7 +8,7 @@ spec:
     email: dany@mahmalat.com
     server: https://dv.acme-v02.api.pki.goog/directory
     externalAccountBinding:
-      keyID: a5427bdfd10d76338eeb6c421137a389
+      keyID: a5427bdfd10d7633160f4588a2a25691
       keySecretRef:
         name: eab-dev.skyloft.cc
         key: secret
