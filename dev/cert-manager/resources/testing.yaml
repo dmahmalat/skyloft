@@ -24,7 +24,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: tagspaces
+  name: argocd
   namespace: core-services
 spec:
   tls:
@@ -37,41 +37,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: tagspaces
+            name: argocd-server
             port:
               number: 80
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: argocd
-  namespace: core-services
-spec:
-  ports:
-  - port: 80
-    protocol: TCP
-  selector:
-    app.kubernetes.io/name: argocd-server
-
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: tagspaces
-  namespace: core-services
-spec:
-  selector:
-    matchLabels:
-      run: tagspaces
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        run: tagspaces
-    spec:
-      containers:
-      - name: tagspaces
-        image: dmahmalat/tagspaces
-        ports:
-        - containerPort: 80
