@@ -12,7 +12,6 @@ spec:
       keySecretRef:
         name: eab-dev.skyloft.cc
         key: secret
-    disableAccountKeyGeneration: false
     privateKeySecretRef:
       name: acme-dev.skyloft.cc
     solvers:
@@ -28,7 +27,7 @@ metadata:
   namespace: core-services
 spec:
   dnsNames:
-    #- "*.dev.skyloft.cc"
+    - "*.dev.skyloft.cc"
     - "dev.skyloft.cc"
   secretName: dev.skyloft.cc
   issuerRef:
