@@ -44,7 +44,7 @@ spec:
   tls:
   - secretName: dev.skyloft.cc
   rules:
-  - host: dev.skyloft.cc
+  - host: argo.dev.skyloft.cc
     http:
       paths:
       - path: /
