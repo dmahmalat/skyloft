@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: skyloft-dev
+  name: acme-dns
   namespace: core-services
 spec:
   project: skyloft-dev
   source:
     repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
-    path: dev
+    path: dev/acme-dns
     directory:
-      recurse: false
+      recurse: true
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services
