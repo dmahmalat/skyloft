@@ -5,13 +5,16 @@ metadata:
   namespace: core-services
 spec:
   project: default
-  source:
-    repoURL: https://charts.jetstack.io
+  sources:
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    ref: skyloft
+  - repoURL: https://charts.jetstack.io
     targetRevision: v1.3.1
     chart: cert-manager
     helm:
       valueFiles:
-      - dev/cert-manager/values.yaml
+      - $skyloft/dev/cert-manager/values.yaml
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services
