@@ -28,7 +28,8 @@ metadata:
   namespace: core-services
 spec:
   dnsNames:
-    - dev.skyloft.cc
+    #- "*.dev.skyloft.cc"
+    - "dev.skyloft.cc"
   secretName: dev.skyloft.cc
   issuerRef:
     name: dev.skyloft.cc
@@ -44,7 +45,7 @@ spec:
   tls:
   - secretName: dev.skyloft.cc
   rules:
-  - host: dev.skyloft.cc
+  - host: argo.dev.skyloft.cc
     http:
       paths:
       - path: /
