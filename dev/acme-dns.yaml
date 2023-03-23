@@ -4,7 +4,7 @@ metadata:
   name: acme-dns
   namespace: core-services
 spec:
-  project: skyloft-dev
+  project: default
   source:
     repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
