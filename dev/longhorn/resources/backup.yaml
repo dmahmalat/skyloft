@@ -4,7 +4,7 @@ metadata:
   name: backup
   namespace: core-services
 spec:
-  cron: "* * * * *"
+  cron: "30 * * * *"
   task: "backup"
   groups:
   - default
