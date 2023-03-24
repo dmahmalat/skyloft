@@ -31,11 +31,11 @@ spec:
                 secretKeyRef:
                   name: minio-access-key
                   key: AWS_SECRET_ACCESS_KEY
-            - name: RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS
-              valueFrom:
-                secretKeyRef:
-                  name: gcs-access-key
-                  key: GCS_ACCESS_KEY
+            # - name: RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS
+            #   valueFrom:
+            #     secretKeyRef:
+            #       name: gcs-access-key
+            #       key: GCS_ACCESS_KEY
 
 ---
 apiVersion: v1
