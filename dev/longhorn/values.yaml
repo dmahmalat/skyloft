@@ -1,0 +1,5 @@
+defaultSettings:
+  backupTarget: s3://backup@skyloft/
+  backupTargetCredentialSecret: longhorn-minio-keys
+  allowRecurringJobWhileVolumeDetached: true
+  orphanAutoDeletion: true
