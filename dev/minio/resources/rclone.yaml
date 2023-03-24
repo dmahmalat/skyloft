@@ -50,5 +50,5 @@ data:
 
   # Source remote configurations
   DST_REMOTE: "dst"
-  DST_PATH: "skyloft-storage-bucket-dev-6051ba7"
+  DST_PATH: "skyloft-storage-bucket-dev-43aed80"
   RCLONE_CONFIG_DST_TYPE: "google cloud storage"
