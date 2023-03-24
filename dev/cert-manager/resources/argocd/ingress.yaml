@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd
+  namespace: core-services
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-https@kubernetescrd
+spec:
+  tls:
+  - secretName: cert-argo.dev.skyloft.cc
+  rules:
+  - host: argo.dev.skyloft.cc
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 80
+
+# ---
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: Middleware
+# metadata:
+#   name: strip-prefix
+#   namespace: core-services
+# spec:
+#   stripPrefixRegex:
+#     regex:
+#     - ^/path
