@@ -20,7 +20,7 @@ spec:
             name: minio
             port:
               number: 9001
-      - path: /api
+      - path: /potate
         pathType: Prefix
         backend:
           service:
@@ -37,4 +37,4 @@ metadata:
 spec:
   stripPrefixRegex:
     regex:
-    - ^/api
+    - ^/potate
