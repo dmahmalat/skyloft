@@ -5,7 +5,7 @@ metadata:
   namespace: core-services
   annotations:
     traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-https@kubernetescrd
-    traefik.ingress.kubernetes.io/router.middlewares: core-services-minio-prefix-api@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: core-services-minio-prefix-public-api@kubernetescrd
 spec:
   tls:
   - secretName: cert-s3.dev.skyloft.cc
@@ -20,7 +20,7 @@ spec:
             name: minio
             port:
               number: 9001
-      - path: /potate
+      - path: /public/api
         pathType: Prefix
         backend:
           service:
@@ -32,9 +32,9 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: minio-prefix-api
+  name: minio-prefix-public-api
   namespace: core-services
 spec:
   stripPrefixRegex:
     regex:
-    - ^/potate
+    - ^/public/api
