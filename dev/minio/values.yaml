@@ -1,6 +1,6 @@
-service:
-  annotations:
-    traefik.ingress.kubernetes.io/service.passhostheader: "true"
+# service:
+#   annotations:
+#     traefik.ingress.kubernetes.io/service.passhostheader: "true"
 
 extraEnvVars:
   - name: MINIO_SERVER_URL
