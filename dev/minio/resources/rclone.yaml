@@ -21,21 +21,16 @@ spec:
             - configMapRef:
                 name: minio-backup
             env:
-            - name: RCLONE_CONFIG_SRC_ACCESS_KEY_ID
+            - name: RCLONE_CONFIG_SRC_ACCESS_KEY_
               valueFrom:
                 secretKeyRef:
                   name: minio-access-key
                   key: AWS_ACCESS_KEY_ID
-            - name: RCLONE_CONFIG_SRC_SECRET_ACCESS_KEY
+            - name: RCLONE_CONFIG_SRC_SECRET_ACCESS_
               valueFrom:
                 secretKeyRef:
                   name: minio-access-key
                   key: AWS_SECRET_ACCESS_KEY
-            - name: RCLONE_CONFIG_DST_GCS_SERVICE_ACCOUNT_CREDENTIAL
-              valueFrom:
-                secretKeyRef:
-                  name: gcs-access-key
-                  key: GCS_SERVICE_ACCOUNT_JSON
 
 ---
 apiVersion: v1
