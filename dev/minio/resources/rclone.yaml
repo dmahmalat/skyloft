@@ -57,5 +57,5 @@ data:
   DST_REMOTE: "dst"
   DST_PATH: "skyloft-storage-bucket-dev-6051ba7"
   RCLONE_CONFIG_DST_TYPE: "google cloud storage"
-  RCLONE_CONFIG_DST_GCS_BUCKET_POLICY_ONLY: "true"
+  RCLONE_GCS_BUCKET_POLICY_ONLY: "true"
   RCLONE_CONFIG_DST_GCS_LOCATION: "us"
