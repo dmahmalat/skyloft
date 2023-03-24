@@ -21,12 +21,12 @@ spec:
             - configMapRef:
                 name: minio-backup
             env:
-            - name: RCLONE_CONFIG_SRC_ACCESS_KEY_
+            - name: RCLONE_CONFIG_SRC_ACCESS_KEY_ID
               valueFrom:
                 secretKeyRef:
                   name: minio-access-key
                   key: AWS_ACCESS_KEY_ID
-            - name: RCLONE_CONFIG_SRC_SECRET_ACCESS_
+            - name: RCLONE_CONFIG_SRC_SECRET_ACCESS_KEY
               valueFrom:
                 secretKeyRef:
                   name: minio-access-key
