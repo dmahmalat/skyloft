@@ -3,6 +3,8 @@ service:
     traefik.ingress.kubernetes.io/service.passhostheader: "true"
 
 extraEnvVars:
+  - name: MINIO_SERVER_URL
+    value: https://s3.dev.skyloft.cc/public/api
   - name: MINIO_BROWSER_REDIRECT_URL
     value: https://s3.dev.skyloft.cc
 
