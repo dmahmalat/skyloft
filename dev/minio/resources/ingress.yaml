@@ -5,7 +5,7 @@ metadata:
   namespace: core-services
   annotations:
     traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-https@kubernetescrd
-    traefik.ingress.kubernetes.io/router.middlewares: core-services-minio-prefix-public-api@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: core-services-minio-prefix-dashboard@kubernetescrd
 spec:
   tls:
   - secretName: cert-s3.dev.skyloft.cc
@@ -13,14 +13,14 @@ spec:
   - host: s3.dev.skyloft.cc
     http:
       paths:
-      - path: /
+      - path: /dashboard
         pathType: Prefix
         backend:
           service:
             name: minio
             port:
               number: 9001
-      - path: /public/api
+      - path: /
         pathType: Prefix
         backend:
           service:
@@ -32,9 +32,9 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: minio-prefix-public-api
+  name: minio-prefix-dashboard
   namespace: core-services
 spec:
   stripPrefixRegex:
     regex:
-    - ^/public/api
+    - ^/dashboard

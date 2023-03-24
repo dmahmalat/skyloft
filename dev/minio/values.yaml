@@ -4,9 +4,9 @@ service:
 
 extraEnvVars:
   - name: MINIO_SERVER_URL
-    value: https://s3.dev.skyloft.cc/public/api
+    value: https://s3.dev.skyloft.cc/
   - name: MINIO_BROWSER_REDIRECT_URL
-    value: https://s3.dev.skyloft.cc
+    value: https://s3.dev.skyloft.cc/dashboard/
 
 tolerations:
 - key: CriticalAddonsOnly
