@@ -16,7 +16,7 @@ spec:
           containers:
           - name: rclone
             image: docker.io/rclone/rclone:1.62.2
-            args: [ "sync", "$(BACKUP_SRC_REMOTE):$(BACKUP_SRC_PATH)", "$(BACKUP_DST_REMOTE):$(BACKUP_DST_PATH)" ]
+            args: [ "sync", "$(SRC_REMOTE):$(SRC_PATH)", "$(DST_REMOTE):$(DST_PATH)" ]
             envFrom:
             - configMapRef:
                 name: minio-backup
@@ -31,7 +31,7 @@ spec:
                 secretKeyRef:
                   name: minio-access-key
                   key: AWS_SECRET_ACCESS_KEY
-            - name: RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS
+            - name: RCLONE_CONFIG_DST_GCS_SERVICE_ACCOUNT_CREDENTIALS
               valueFrom:
                 secretKeyRef:
                   name: gcs-access-key
@@ -45,8 +45,8 @@ metadata:
   namespace: core-services
 data:
   # Source remote configurations
-  BACKUP_SRC_REMOTE: "src"
-  BACKUP_SRC_PATH: "backup"
+  SRC_REMOTE: "src"
+  SRC_PATH: "backup"
   RCLONE_CONFIG_SRC_TYPE: "s3"
   RCLONE_CONFIG_SRC_REGION: "skyloft"
   RCLONE_CONFIG_SRC_PROVIDER: "Minio"
@@ -54,6 +54,8 @@ data:
   RCLONE_CONFIG_SRC_ENDPOINT: "https://s3.dev.skyloft.cc"
 
   # Source remote configurations
-  BACKUP_DST_REMOTE: "dst"
-  BACKUP_DST_PATH: "skyloft-storage-bucket-dev-6051ba7"
+  DST_REMOTE: "dst"
+  DST_PATH: "skyloft-storage-bucket-dev-6051ba7"
   RCLONE_CONFIG_DST_TYPE: "google cloud storage"
+  RCLONE_CONFIG_DST_GCS_BUCKET_POLICY_ONLY: "true"
+  RCLONE_CONFIG_DST_GCS_LOCATION: "us"
