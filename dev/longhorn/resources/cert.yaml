@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: storage.dev.skyloft.cc
+  namespace: core-services
+spec:
+  dnsNames:
+    - storage.dev.skyloft.cc
+  secretName: cert-storage.dev.skyloft.cc
+  issuerRef:
+    name: skyloft.cc
+    kind: ClusterIssuer

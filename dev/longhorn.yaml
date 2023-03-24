@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: longhorn
+  namespace: core-services
+spec:
+  project: default
+  sources:
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: dev/longhorn/resources
+    directory:
+      recurse: true
+    ref: skyloft
+  - repoURL: https://charts.longhorn.io
+    targetRevision: v1.4.1
+    chart: longhorn
+    helm:
+      valueFiles:
+      - $skyloft/dev/longhorn/values.yaml
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: core-services
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=false
+    automated:
+      selfHeal: true
+      prune: true
