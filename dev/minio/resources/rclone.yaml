@@ -31,7 +31,7 @@ spec:
                 secretKeyRef:
                   name: minio-access-key
                   key: AWS_SECRET_ACCESS_KEY
-            - name: RCLONE_CONFIG_DST_GCS_SERVICE_ACCOUNT_CREDENTIALS
+            - name: RCLONE_CONFIG_DST_GCS_SERVICE_ACCOUNT_CREDENTIAL
               valueFrom:
                 secretKeyRef:
                   name: gcs-access-key
@@ -58,4 +58,3 @@ data:
   DST_PATH: "skyloft-storage-bucket-dev-6051ba7"
   RCLONE_CONFIG_DST_TYPE: "google cloud storage"
   RCLONE_GCS_BUCKET_POLICY_ONLY: "true"
-  RCLONE_CONFIG_DST_GCS_LOCATION: "us"
