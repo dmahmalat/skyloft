@@ -1,0 +1,58 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: minio-backup
+  namespace: core-services
+spec:
+  schedule: "45 * * * *"
+  successfulJobsHistoryLimit: 24
+  failedJobsHistoryLimit: 5
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: rclone
+            image: docker.io/rclone/rclone:1.62.2
+            args: [ "sync", "$(BACKUP_SRC_REMOTE):$(BACKUP_SRC_PATH)", "$(BACKUP_DST_REMOTE):$(BACKUP_DST_PATH)" ]
+            envFrom:
+            - configMapRef:
+                name: minio-backup
+            env:
+            - name: RCLONE_CONFIG_SRC_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: minio-access-key
+                  key: AWS_ACCESS_KEY_ID
+            - name: RCLONE_CONFIG_SRC_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: minio-access-key
+                  key: AWS_SECRET_ACCESS_KEY
+            - name: RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS
+              valueFrom:
+                secretKeyRef:
+                  name: gcs-access-key
+                  key: GCS_SERVICE_ACCOUNT_JSON
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: minio-backup
+  namespace: core-services
+data:
+  # Source remote configurations
+  BACKUP_SRC_REMOTE: "src"
+  BACKUP_SRC_PATH: "backup"
+  RCLONE_CONFIG_SRC_TYPE: "s3"
+  RCLONE_CONFIG_SRC_PROVIDER: "Minio"
+  RCLONE_CONFIG_SRC_ENV_AUTH: "false"
+  RCLONE_CONFIG_SRC_ENDPOINT: "https://s3.dev.skyloft.cc"
+
+  # Source remote configurations
+  BACKUP_DST_REMOTE: "dst"
+  BACKUP_DST_PATH: "skyloft-storage-bucket-dev-6051ba7"
+  RCLONE_CONFIG_DST_TYPE: "google cloud storage"
