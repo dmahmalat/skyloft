@@ -4,7 +4,7 @@ service:
 
 extraEnvVars:
   - name: MINIO_BROWSER_REDIRECT_URL
-    value: s3.dev.skyloft.cc
+    value: https://s3.dev.skyloft.cc
 
 tolerations:
 - key: CriticalAddonsOnly
