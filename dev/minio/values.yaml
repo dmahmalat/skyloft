@@ -2,6 +2,8 @@
 #   annotations:
 #     traefik.ingress.kubernetes.io/service.passhostheader: "true"
 
+mode: "distributed"
+
 extraEnvVars:
   - name: MINIO_SERVER_URL
     value: https://s3.dev.skyloft.cc/
