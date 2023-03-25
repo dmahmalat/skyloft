@@ -36,6 +36,15 @@ spec:
                 secretKeyRef:
                   name: gcs-access-key
                   key: GCS_ACCESS_KEY
+          tolerations:
+          - key: CriticalAddonsOnly
+            operator: Exists
+          - key: node-role.kubernetes.io/control-plane
+            operator: Exists
+            effect: NoSchedule
+          - key: node-role.kubernetes.io/master
+            operator: Exists
+            effect: NoSchedule
 
 ---
 apiVersion: v1
