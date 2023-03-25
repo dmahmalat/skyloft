@@ -5,6 +5,8 @@ ingressRoute:
   dashboard:
     enabled: false
 
+fullnameOverride: traefik
+
 tolerations:
 - key: CriticalAddonsOnly
   operator: Exists
