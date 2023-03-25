@@ -6,7 +6,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  description: Core Services Applications Resources
+  description: Core Services Application Resources
   sourceRepos:
   - '*'
   destinations:
@@ -28,8 +28,6 @@ spec:
     repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
     path: dev/core-services
-    directory:
-      recurse: false
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services
