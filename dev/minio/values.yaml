@@ -8,6 +8,9 @@ extraEnvVars:
   - name: MINIO_BROWSER_REDIRECT_URL
     value: https://s3.dev.skyloft.cc/dashboard/
 
+persistence:
+  size: 1Gi
+
 tolerations:
 - key: CriticalAddonsOnly
   operator: Exists
