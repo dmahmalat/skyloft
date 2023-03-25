@@ -1,5 +1,7 @@
 mode: "distributed"
 
+fullnameOverride: minio
+
 extraEnvVars:
   - name: MINIO_SERVER_URL
     value: https://s3.dev.skyloft.cc/

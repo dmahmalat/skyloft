@@ -1,5 +1,7 @@
 replicas: 2
 
+fullnameOverride: metrics-server
+
 tolerations:
 - key: CriticalAddonsOnly
   operator: Exists

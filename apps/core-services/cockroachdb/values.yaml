@@ -5,6 +5,8 @@ storage:
   persistentVolume:
     size: 1Gi
 
+fullnameOverride: cockroachdb
+
 init:
   tolerations:
   - key: CriticalAddonsOnly
