@@ -1,5 +1,8 @@
 tls:
   certs:
+    provided: true
+    tlsSecret: true
+    certManager: true
     selfSigner:
       enabled: false
       caProvided: true
