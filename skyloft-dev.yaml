@@ -1,10 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: core-services
+  namespace: core-services
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Core Services Applications Resources
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: core-services
+    server: https://kubernetes.default.svc
+    name: in-cluster
+  orphanedResources:
+    warn: true
+
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: skyloft-dev
   namespace: core-services
 spec:
-  project: default
+  project: core-services
   source:
     repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
