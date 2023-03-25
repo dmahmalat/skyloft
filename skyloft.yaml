@@ -19,5 +19,3 @@ spec:
   - namespace: core-services
     server: https://kubernetes.default.svc
     name: in-cluster
-  orphanedResources:
-    warn: true
