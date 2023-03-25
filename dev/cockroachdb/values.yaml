@@ -1,7 +1,8 @@
 tls:
-  certs:
-    provided: true
-    clientRootSecret: cert-db.dev.skyloft.cc
+  enabled: false
+  # certs:
+  #   provided: true
+  #   clientRootSecret: cert-db.dev.skyloft.cc
 
 storage:
   persistentVolume:
