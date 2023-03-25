@@ -3,14 +3,14 @@ replicaCount: 2
 hpa:
   minReplicas: 2
 
-deployment:
-  name: coredns
+fullnameOverride: coredns
+k8sAppLabelOverride: kube-dns
 
 service:
   name: kube-dns
+  clusterIP: 10.43.0.10
 
 serviceAccount:
-  name: coredns
   create: true
 
 prometheus:
