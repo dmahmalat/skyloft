@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cockroachdb
+  namespace: core-services
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-https@kubernetescrd
+spec:
+  tls:
+  - secretName: cert-db.dev.skyloft.cc
+  rules:
+  - host: db.dev.skyloft.cc
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: longhorn-frontend
+            port:
+              number: 80

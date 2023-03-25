@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cockroachdb
+  namespace: core-services
+spec:
+  project: default
+  sources:
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: dev/cockroachdb/resources
+    directory:
+      recurse: true
+    ref: skyloft
+  - repoURL: https://charts.cockroachdb.com
+    targetRevision: v10.0.6
+    chart: cockroachdb
+    helm:
+      valueFiles:
+      - $skyloft/dev/cockroachdb/values.yaml
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: core-services
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=false
+    automated:
+      selfHeal: true
+      prune: true
