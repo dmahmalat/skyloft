@@ -1,4 +1,5 @@
 installCRDs: true
+replicaCount: 2
 
 tolerations:
 - key: CriticalAddonsOnly
@@ -11,6 +12,7 @@ tolerations:
   effect: NoSchedule
 
 webhook:
+  replicaCount: 2
   tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
@@ -22,6 +24,7 @@ webhook:
     effect: NoSchedule
 
 cainjector:
+  replicaCount: 2
   tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
