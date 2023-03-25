@@ -5,4 +5,4 @@ tls:
 
 storage:
   persistentVolume:
-    size: 500Mb
+    size: 500Mi
