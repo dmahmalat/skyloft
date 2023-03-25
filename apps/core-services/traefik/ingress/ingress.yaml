@@ -16,6 +16,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: traefik
+            name: traefik-helm
             port:
               number: 8080
