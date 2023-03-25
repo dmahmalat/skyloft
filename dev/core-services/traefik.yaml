@@ -8,7 +8,6 @@ spec:
   sources:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
-    path: dev/core-services/traefik/ingress
     ref: skyloft
   - repoURL: https://traefik.github.io/charts
     targetRevision: v21.2.0
@@ -16,6 +15,9 @@ spec:
     helm:
       valueFiles:
       - $skyloft/dev/core-services/traefik/values.yaml
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: dev/core-services/traefik/ingress
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services

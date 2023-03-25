@@ -8,19 +8,21 @@ spec:
   sources:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
-    path: dev/core-services/longhorn/ingress
     ref: skyloft
-  - repoURL: https://github.com/dmahmalat/skyloft.git
-    targetRevision: HEAD
-    path: dev/core-services/longhorn/resources
-    directory:
-      recurse: true
   - repoURL: https://charts.longhorn.io
     targetRevision: v1.4.1
     chart: longhorn
     helm:
       valueFiles:
       - $skyloft/dev/core-services/longhorn/values.yaml
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: dev/core-services/longhorn/ingress
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: dev/core-services/longhorn/resources
+    directory:
+      recurse: true
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services

@@ -8,19 +8,21 @@ spec:
   sources:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
-    path: dev/core-services/minio/ingress
     ref: skyloft
-  - repoURL: https://github.com/dmahmalat/skyloft.git
-    targetRevision: HEAD
-    path: dev/core-services/minio/resources
-    directory:
-      recurse: true
   - repoURL: https://charts.bitnami.com/bitnami
     targetRevision: v12.2.1
     chart: minio
     helm:
       valueFiles:
       - $skyloft/dev/core-services/minio/values.yaml
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: dev/core-services/minio/ingress
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: dev/core-services/minio/resources
+    directory:
+      recurse: true
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services
