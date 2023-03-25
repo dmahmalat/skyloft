@@ -1,16 +1,21 @@
 replicaCount: 2
 
+hpa:
+  minReplicas: 2
+
 deployment:
   name: coredns
 
 service:
-  name: coredns
+  name: kube-dns
 
 serviceAccount:
   name: coredns
+  create: true
 
-hpa:
-  minReplicas: 2
+prometheus:
+  service:
+    enabled: true
 
 autoscaler:
   tolerations:
