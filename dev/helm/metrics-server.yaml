@@ -1,17 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd
+  name: metrics-server-helm
   namespace: core-services
 spec:
-  project: default
+  project: core-services
   sources:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
-    path: dev/core-services/argocd/ingress
+    ref: skyloft
+  - repoURL: https://kubernetes-sigs.github.io/metrics-server/
+    targetRevision: v3.8.4
+    chart: metrics-server
+    helm:
+      valueFiles:
+      - $skyloft/apps/core-services/metrics-server/values.yaml
   destination: 
     server: https://kubernetes.default.svc
-    namespace: core-services
+    namespace: kube-system
   syncPolicy:
     syncOptions:
     - CreateNamespace=false

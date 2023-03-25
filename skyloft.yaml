@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: core-services
+  namespace: core-services
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Core Services Application Resources
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: kube-system
+    server: https://kubernetes.default.svc
+    name: in-cluster
+  - namespace: core-services
+    server: https://kubernetes.default.svc
+    name: in-cluster
+  orphanedResources:
+    warn: true

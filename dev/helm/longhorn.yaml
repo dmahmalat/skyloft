@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: longhorn
+  name: longhorn-helm
   namespace: core-services
 spec:
-  project: default
+  project: core-services
   sources:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
@@ -14,15 +14,7 @@ spec:
     chart: longhorn
     helm:
       valueFiles:
-      - $skyloft/dev/core-services/longhorn/values.yaml
-  - repoURL: https://github.com/dmahmalat/skyloft.git
-    targetRevision: HEAD
-    path: dev/core-services/longhorn/ingress
-  - repoURL: https://github.com/dmahmalat/skyloft.git
-    targetRevision: HEAD
-    path: dev/core-services/longhorn/resources
-    directory:
-      recurse: true
+      - $skyloft/apps/core-services/longhorn/values.yaml
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services

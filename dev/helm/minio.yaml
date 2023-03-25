@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minio-helm
+  namespace: core-services
+spec:
+  project: core-services
+  sources:
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    ref: skyloft
+  - repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: v12.2.1
+    chart: minio
+    helm:
+      valueFiles:
+      - $skyloft/apps/core-services/minio/values.yaml
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: core-services
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=false
+    automated:
+      selfHeal: true
+      prune: true

@@ -1,28 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: coredns-helm
   namespace: core-services
 spec:
-  project: default
+  project: core-services
   sources:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
     ref: skyloft
-  - repoURL: https://charts.jetstack.io
-    targetRevision: v1.11.0
-    chart: cert-manager
+  - repoURL: https://coredns.github.io/helm
+    targetRevision: v1.19.10
+    chart: coredns
     helm:
       valueFiles:
-      - $skyloft/dev/core-services/cert-manager/values.yaml
-  - repoURL: https://github.com/dmahmalat/skyloft.git
-    targetRevision: HEAD
-    path: dev/core-services/cert-manager/resources
-    directory:
-      recurse: true
+      - $skyloft/apps/core-services/coredns/values.yaml
   destination: 
     server: https://kubernetes.default.svc
-    namespace: core-services
+    namespace: kube-system
   syncPolicy:
     syncOptions:
     - CreateNamespace=false

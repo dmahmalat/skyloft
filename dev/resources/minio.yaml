@@ -1,26 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: minio
+  name: minio-resources
   namespace: core-services
 spec:
-  project: default
+  project: core-services
   sources:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
-    ref: skyloft
-  - repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: v12.2.1
-    chart: minio
-    helm:
-      valueFiles:
-      - $skyloft/dev/core-services/minio/values.yaml
+    path: apps/core-services/minio/ingress
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
-    path: dev/core-services/minio/ingress
-  - repoURL: https://github.com/dmahmalat/skyloft.git
-    targetRevision: HEAD
-    path: dev/core-services/minio/resources
+    path: apps/core-services/minio/resources
     directory:
       recurse: true
   destination: 
