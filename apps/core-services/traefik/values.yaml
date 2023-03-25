@@ -7,6 +7,9 @@ ingressRoute:
 
 fullnameOverride: traefik
 
+additionalArguments:
+  - "--api.insecure=true"
+
 tolerations:
 - key: CriticalAddonsOnly
   operator: Exists
