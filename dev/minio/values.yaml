@@ -11,6 +11,8 @@ extraEnvVars:
 persistence:
   size: 1Gi
 
+defaultBuckets: "backup"
+
 tolerations:
 - key: CriticalAddonsOnly
   operator: Exists
