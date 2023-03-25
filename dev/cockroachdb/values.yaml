@@ -2,3 +2,5 @@ tls:
   certs:
     selfSigner:
       enabled: false
+      caProvided: true
+      caSecret: cert-db.dev.skyloft.cc
