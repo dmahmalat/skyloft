@@ -10,6 +10,9 @@ spec:
   sourceRepos:
   - '*'
   destinations:
+  - namespace: kube-system
+    server: https://kubernetes.default.svc
+    name: in-cluster
   - namespace: core-services
     server: https://kubernetes.default.svc
     name: in-cluster
