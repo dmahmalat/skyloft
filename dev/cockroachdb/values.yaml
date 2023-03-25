@@ -1,9 +1,4 @@
 tls:
   certs:
-    certManager: true
-    certManagerIssuer:
-      group: cert-manager.io/v1
-      kind: Issuer
-      name: skyloft.cc
-    selfSigner:
-      enabled: false
+    provided: true
+    clientRootSecret: cert-db.dev.skyloft.cc
