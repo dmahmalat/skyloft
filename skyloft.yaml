@@ -9,6 +9,9 @@ spec:
   description: Core Services Application Resources
   sourceRepos:
   - '*'
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
   destinations:
   - namespace: kube-system
     server: https://kubernetes.default.svc
