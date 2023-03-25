@@ -2,7 +2,7 @@ tls:
   certs:
     certManager: true
     certManagerIssuer:
-      group: cert-manager.io
+      group: cert-manager.io/v1
       kind: Issuer
       name: skyloft.cc
     selfSigner:
