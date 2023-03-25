@@ -1,6 +1,10 @@
 deployment:
   replicas: 2
 
+ingressRoute:
+  dashboard:
+    enabled: false
+
 tolerations:
 - key: CriticalAddonsOnly
   operator: Exists
