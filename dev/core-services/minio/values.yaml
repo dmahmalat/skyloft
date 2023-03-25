@@ -1,7 +1,3 @@
-# service:
-#   annotations:
-#     traefik.ingress.kubernetes.io/service.passhostheader: "true"
-
 mode: "distributed"
 
 extraEnvVars:
@@ -21,7 +17,7 @@ extraEnvVars:
         key: AWS_SECRET_ACCESS_KEY
 
 persistence:
-  size: 1Gi
+  size: 2Gi
 
 defaultBuckets: "backup"
 

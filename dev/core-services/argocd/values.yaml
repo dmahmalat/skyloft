@@ -3,6 +3,22 @@ configs:
     server:
       insecure: true
 
+controller:
+  replicas: 2
+
+server:
+  replicas: 2
+  autoscaling:
+    minReplicas: 2
+
+repoServer:
+  replicas: 2
+  autoscaling:
+    minReplicas: 2
+
+applicationSet:
+  replicaCount: 2
+
 global:
   tolerations:
   - key: CriticalAddonsOnly

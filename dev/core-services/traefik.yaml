@@ -1,16 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: skyloft-dev
+  name: traefik
   namespace: core-services
 spec:
   project: default
-  source:
-    repoURL: https://github.com/dmahmalat/skyloft.git
+  sources:
+  - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
-    path: dev/core-services
-    directory:
-      recurse: false
+    path: dev/core-services/traefik/ingress
+    ref: skyloft
+  - repoURL: https://traefik.github.io/charts
+    targetRevision: v21.2.0
+    chart: traefik
+    helm:
+      valueFiles:
+      - $skyloft/dev/core-services/traefik/values.yaml
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services

@@ -1,23 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: minio
   namespace: core-services
 spec:
   project: default
   sources:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
-    path: dev/cert-manager/resources
+    path: dev/core-services/minio/ingress
+    ref: skyloft
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: dev/core-services/minio/resources
     directory:
       recurse: true
-    ref: skyloft
-  - repoURL: https://charts.jetstack.io
-    targetRevision: v1.11.0
-    chart: cert-manager
+  - repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: v12.2.1
+    chart: minio
     helm:
       valueFiles:
-      - $skyloft/dev/cert-manager/values.yaml
+      - $skyloft/dev/core-services/minio/values.yaml
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services

@@ -3,7 +3,7 @@ tls:
 
 storage:
   persistentVolume:
-    size: 500Mi
+    size: 1Gi
 
 init:
   tolerations:

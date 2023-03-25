@@ -1,23 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: longhorn
+  name: cockroachdb
   namespace: core-services
 spec:
   project: default
   sources:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
-    path: dev/longhorn/resources
-    directory:
-      recurse: true
+    path: dev/core-services/cockroachdb/ingress
     ref: skyloft
-  - repoURL: https://charts.longhorn.io
-    targetRevision: v1.4.1
-    chart: longhorn
+  - repoURL: https://charts.cockroachdb.com
+    targetRevision: v10.0.6
+    chart: cockroachdb
     helm:
       valueFiles:
-      - $skyloft/dev/longhorn/values.yaml
+      - $skyloft/dev/core-services/cockroachdb/values.yaml
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services

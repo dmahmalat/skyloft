@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: traefik
+  namespace: core-services
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-https@kubernetescrd
+spec:
+  tls:
+  - secretName: cert-ingress.dev.skyloft.cc
+  rules:
+  - host: ingress.dev.skyloft.cc
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: traefik
+            port:
+              number: 8080
