@@ -55,7 +55,7 @@ metadata:
 data:
   # Source configuration
   SRC_REMOTE: "src"
-  SRC_PATH: "backup"
+  SRC_PATH: "skyloft"
   RCLONE_CONFIG_SRC_TYPE: "s3"
   RCLONE_CONFIG_SRC_REGION: "skyloft"
   RCLONE_CONFIG_SRC_PROVIDER: "Minio"

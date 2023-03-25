@@ -1,5 +1,5 @@
 defaultSettings:
-  backupTarget: s3://backup@skyloft/
+  backupTarget: s3://skyloft@skyloft/
   backupTargetCredentialSecret: minio-access-key
   allowRecurringJobWhileVolumeDetached: true
   orphanAutoDeletion: true

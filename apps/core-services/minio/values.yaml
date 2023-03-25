@@ -19,7 +19,7 @@ extraEnvVars:
 persistence:
   size: 2Gi
 
-defaultBuckets: "backup"
+defaultBuckets: "skyloft"
 
 tolerations:
 - key: CriticalAddonsOnly
