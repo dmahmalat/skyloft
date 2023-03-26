@@ -19,6 +19,7 @@ spec:
       name: errorpages
       port: 80
 
+---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
