@@ -9,13 +9,13 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: HostRegexp(`{host:.+}`)
+      match: HostRegexp(`{host:.+}`) || PathRegexp(`{path:.+}`)
       # services:
       #   - kind: Service
       #     name: errorpages
       #     port: 80
       middlewares:
-        - name: redirect-errors
+        - name: redirect-subdomains
           namespace: core-services
       services:
         - kind: TraefikService
