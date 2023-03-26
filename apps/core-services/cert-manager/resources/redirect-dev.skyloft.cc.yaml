@@ -4,10 +4,19 @@ metadata:
   name: redirect-test
   namespace: core-services
   annotations:
-    traefik.ingress.kubernetes.io/preserve-host: "true"
-    traefik.ingress.kubernetes.io/redirect-permanent: "true"
-    traefik.ingress.kubernetes.io/redirect-regex: "^(.*)"
-    traefik.ingress.kubernetes.io/redirect-replacement: "https://www.google.com"
+    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-test@kubernetescrd
 spec:
   rules:
-  - host: "*.dev.skyloft.cc"
+  - host: "potate.dev.skyloft.cc"
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-test
+  namespace: core-services
+spec:
+  redirectregex:
+    regex: "^(.)*"
+    replacement: "https://google.com"
+    permanent: true
