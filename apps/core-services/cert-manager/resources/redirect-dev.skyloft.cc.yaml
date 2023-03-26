@@ -17,6 +17,26 @@ metadata:
   namespace: core-services
 spec:
   redirectRegex:
+    permanent: true
     regex: "^(.)*"
     replacement: "https://google.com"
-    permanent: true
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: redirect-test
+  namespace: core-services
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`dev.skyloft.cc`)
+      middlewares:
+        - name: redirect-test
+          namespace: core-services
+      services:
+        - kind: TraefikService
+          name: noop@internal
