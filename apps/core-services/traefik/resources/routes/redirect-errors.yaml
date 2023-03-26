@@ -16,6 +16,6 @@ spec:
     - name: redirect-subdomains
       namespace: core-services
     services:
-    - kind: TraefikService
-      name: noop@internal
-      #port: 80
+    - kind: Service
+      name: errorpages
+      port: 80
