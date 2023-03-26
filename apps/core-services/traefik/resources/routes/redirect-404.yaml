@@ -6,35 +6,14 @@ metadata:
 spec:
   entryPoints:
   - web
-  - websecure
   routes:
   - kind: Rule
     match: HostRegexp(`{host:.+}`)
     priority: 1
     middlewares:
-    - name: redirect-subdomains
+    - name: redirect-errors
       namespace: core-services
     services:
     - kind: Service
       name: errorpages
       port: 80
-
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: redirect-404-tls
-  namespace: core-services
-spec:
-  entryPoints:
-  - websecure
-  tls:
-    secretName: cert-dev.skyloft.cc
-    passthrough: true
-  routes:
-  - kind: Rule
-    match: Host(`dev.skyloft.cc`) && Path(`/notfound`)
-    services:
-    - kind: Service
-      name: errorpages
-      port: 404
