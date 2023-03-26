@@ -3,8 +3,8 @@ kind: Ingress
 metadata:
   name: errorpages
   namespace: core-services
-  annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: core-services-errorpages-prefix-notfound@kubernetescrd
+  #annotations:
+  #  traefik.ingress.kubernetes.io/router.middlewares: core-services-errorpages-prefix-notfound@kubernetescrd
 spec:
   tls:
   - secretName: cert-dev.skyloft.cc
@@ -20,13 +20,13 @@ spec:
             port:
               number: 80
 
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: errorpages-prefix-notfound
-  namespace: core-services
-spec:
-  stripPrefixRegex:
-    regex:
-    - ^/notfound
+# ---
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: Middleware
+# metadata:
+#   name: errorpages-prefix-notfound
+#   namespace: core-services
+# spec:
+#   stripPrefixRegex:
+#     regex:
+#     - ^/notfound
