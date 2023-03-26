@@ -14,7 +14,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: ""
+            name: nowhere
             port:
               number: 1
 
