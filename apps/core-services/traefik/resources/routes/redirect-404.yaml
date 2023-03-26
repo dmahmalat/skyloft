@@ -30,6 +30,7 @@ spec:
   - websecure
   tls:
     secretName: cert-dev.skyloft.cc
+    passthrough: true
   routes:
   - kind: Rule
     match: Host(`dev.skyloft.cc`) && Path(`/notfound`)
