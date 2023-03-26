@@ -9,7 +9,7 @@ spec:
   - websecure
   routes:
   - kind: Rule
-    match: PathRegexp(`{path:.+}`)
+    match: PathRegexp(`.+`) #|| HostRegexp(`{host:.+}`)
     # services:
     # - kind: Service
     #   name: errorpages
