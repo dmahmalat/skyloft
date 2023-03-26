@@ -19,23 +19,23 @@ spec:
       name: errorpages
       port: 80
 
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: redirect-404
-  namespace: core-services
-spec:
-  tls:
-  - secretName: cert-dev.skyloft.cc
-  rules:
-  - host: dev.skyloft.cc
-    http:
-      paths:
-      - path: /notfound
-        pathType: Prefix
-        backend:
-          service:
-            name: errorpages
-            port:
-              number: 404 #Not existant - used to generate a 404 error.
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: redirect-404
+#   namespace: core-services
+# spec:
+#   tls:
+#   - secretName: cert-dev.skyloft.cc
+#   rules:
+#   - host: dev.skyloft.cc
+#     http:
+#       paths:
+#       - path: /notfound
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: errorpages
+#             port:
+#               number: 404 #Not existant - used to generate a 404 error.
