@@ -6,6 +6,8 @@ fullnameOverride: traefik
 additionalArguments:
   - "--api.insecure=true"
   - "--entrypoints.web.http.middlewares=core-services-redirect-https@kubernetescrd"
+  - "--entrypoints.web.http.middlewares=core-services-redirect-subdomains@kubernetescrd"
+  - "--entrypoints.websecure.http.middlewares=core-services-redirect-subdomains@kubernetescrd"
   - "--entrypoints.web.http.middlewares=core-services-redirect-errors@kubernetescrd"
   - "--entrypoints.websecure.http.middlewares=core-services-redirect-errors@kubernetescrd"
 
