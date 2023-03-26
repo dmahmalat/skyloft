@@ -12,12 +12,23 @@ spec:
     match: HostRegexp(`{host:.+}`)
     priority: 1
     middlewares:
-    - name: redirect-subdomains
+    - name: redirect-404
       namespace: core-services
     services:
     - kind: Service
       name: errorpages
       port: 80
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-404
+  namespace: core-services
+spec:
+  redirectRegex:
+    regex: ".*"
+    replacement: "https://dev.skyloft.cc/notfound"
 
 ---
 apiVersion: networking.k8s.io/v1

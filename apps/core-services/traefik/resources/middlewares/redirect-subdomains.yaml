@@ -1,9 +1,0 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: redirect-subdomains
-  namespace: core-services
-spec:
-  redirectRegex:
-    regex: ".*"
-    replacement: "https://dev.skyloft.cc/notfound"
