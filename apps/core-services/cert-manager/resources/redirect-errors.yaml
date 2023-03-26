@@ -15,7 +15,7 @@ spec:
       #     name: errorpages
       #     port: 80
       middlewares:
-        - name: redirect-subdomains
+        - name: redirect-errors
           namespace: core-services
       services:
         - kind: TraefikService
