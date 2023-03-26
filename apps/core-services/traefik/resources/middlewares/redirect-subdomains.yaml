@@ -6,5 +6,5 @@ metadata:
 spec:
   redirectRegex:
     permanent: true
-    regex: "^(http|https):\\/\\/(.*)\\.(dev\\.skyloft\\.cc)"
-    replacement: "https://$3/notfound"
+    regex: ".*"
+    replacement: "https://dev.skyloft.cc/notfound"
