@@ -10,15 +10,12 @@ spec:
   routes:
     - kind: Rule
       match: HostRegexp(`{host:.+}`)
-      # middlewares:
-      #   - name: redirect-subdomains
-      #     namespace: core-services
+      middlewares:
+        - name: redirect-subdomains
+          namespace: core-services
       services:
-        # - kind: TraefikService
-        #   name: noop@internal
-        - kind: Service
-          name: traefik-dashboard
-          port: 80
+        - kind: TraefikService
+          name: noop@internal
 
 ---
 apiVersion: traefik.containo.us/v1alpha1
@@ -29,5 +26,5 @@ metadata:
 spec:
   redirectRegex:
     permanent: true
-    regex: "^.*"
-    replacement: "https://google.com"
+    regex: ".*"
+    replacement: "https://ingress.dev.skyloft.cc"
