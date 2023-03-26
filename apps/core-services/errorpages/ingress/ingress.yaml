@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: errorpages
   namespace: core-services
-  annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: core-services-strip-prefix@kubernetescrd
 spec:
   tls:
   - secretName: cert-dev.skyloft.cc
