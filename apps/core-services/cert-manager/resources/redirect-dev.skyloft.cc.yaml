@@ -4,7 +4,7 @@ metadata:
   name: redirect-dev.skyloft.cc
   namespace: core-services
   annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-dev.skyloft.cc@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-dev@kubernetescrd
 spec:
   rules:
   - host: "*.dev.skyloft.cc"
@@ -22,10 +22,10 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: redirect-dev.skyloft.cc
+  name: redirect-dev
   namespace: core-services
 spec:
   redirectRegex:
-    regex: ".*"
-    replacement: "https://dev.skyloft.cc"
+    regex: "^https?://(?:www\\.)?(.+)"
+    replacement: "https://$${1}"
     permanent: true
