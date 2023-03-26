@@ -4,7 +4,6 @@ metadata:
   name: minio
   namespace: core-services
   annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-https@kubernetescrd
     traefik.ingress.kubernetes.io/router.middlewares: core-services-minio-prefix-dashboard@kubernetescrd
 spec:
   tls:

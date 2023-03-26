@@ -4,8 +4,6 @@ metadata:
   name: errorpages
   namespace: core-services
   annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-https@kubernetescrd
-    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-errors@kubernetescrd
     traefik.ingress.kubernetes.io/router.middlewares: core-services-errorpages-prefix-notfound@kubernetescrd
 spec:
   tls:
