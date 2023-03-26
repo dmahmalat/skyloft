@@ -6,4 +6,4 @@ metadata:
 spec:
   redirectRegex:
     regex: ".*"
-    replacement: "http://dev.skyloft.cc/notfound"
+    replacement: "https://dev.skyloft.cc/notfound"
