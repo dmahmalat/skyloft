@@ -14,9 +14,9 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: blackhole
+            name: ""
             port:
-              number: 0
+              number: 1
 
 ---
 apiVersion: traefik.containo.us/v1alpha1
