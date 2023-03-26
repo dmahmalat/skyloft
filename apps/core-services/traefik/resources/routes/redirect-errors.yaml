@@ -11,7 +11,7 @@ spec:
     secretName: cert-dev.skyloft.cc
   routes:
   - kind: Rule
-    match: Path(`/notfound`) #HostRegexp(`{host:.+}`)
+    match: HostRegexp(`{host:.+}`)
     services:
     - kind: Service
       name: errorpages
