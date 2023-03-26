@@ -1,0 +1,30 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: redirect-subdomains
+  namespace: core-services
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - kind: Rule
+      match: HostRegexp(`{host:.+}`)
+      middlewares:
+        - name: redirect-subdomains
+          namespace: core-services
+      services:
+        - kind: TraefikService
+          name: noop@internal
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-subdomains
+  namespace: core-services
+spec:
+  redirectRegex:
+    permanent: true
+    regex: "^.*"
+    replacement: "https://google.com"
