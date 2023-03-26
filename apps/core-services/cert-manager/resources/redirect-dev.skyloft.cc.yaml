@@ -16,7 +16,7 @@ metadata:
   name: redirect-test
   namespace: core-services
 spec:
-  redirectregex:
+  redirectRegex:
     regex: "^(.)*"
     replacement: "https://google.com"
     permanent: true
