@@ -3,8 +3,8 @@ kind: Ingress
 metadata:
   name: longhorn
   namespace: core-services
-  annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-https@kubernetescrd
+  #annotations:
+  #  traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-https@kubernetescrd
 spec:
   tls:
   - secretName: cert-storage.dev.skyloft.cc
