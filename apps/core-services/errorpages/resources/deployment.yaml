@@ -24,4 +24,4 @@ spec:
         - name: TEMPLATE_NAME
           value: l7-dark
         - name: SHOW_DETAILS
-          value: true
+          value: "true"
