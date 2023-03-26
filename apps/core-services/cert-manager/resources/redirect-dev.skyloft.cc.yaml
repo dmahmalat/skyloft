@@ -26,6 +26,6 @@ metadata:
   namespace: core-services
 spec:
   redirectRegex:
-    regex: "^https?://(?:www\\.)?(.+)"
-    replacement: "https://$${1}"
+    regex: "(.)*"
+    replacement: "http://google.com"
     permanent: true
