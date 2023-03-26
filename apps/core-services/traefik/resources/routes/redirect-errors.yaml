@@ -10,13 +10,13 @@ spec:
   routes:
   - kind: Rule
     match: HostRegexp(`{host:.+}`)
-    services:
-    - kind: Service
-      name: errorpages
-      port: 80
-    middlewares:
-    - name: redirect-subdomains
-      namespace: core-services
     # services:
-    # - kind: TraefikService
-    #   name: noop@internal
+    # - kind: Service
+    #   name: errorpages
+    #   port: 80
+    middlewares:
+    - name: redirect-errors
+      namespace: core-services
+    services:
+    - kind: TraefikService
+      name: noop@internal
