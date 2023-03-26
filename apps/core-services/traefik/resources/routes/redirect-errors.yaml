@@ -7,8 +7,8 @@ spec:
   entryPoints:
   - web
   - websecure
-  tls:
-    secretName: cert-dev.skyloft.cc
+  # tls:
+  #   secretName: cert-dev.skyloft.cc
   routes:
   - kind: Rule
     match: HostRegexp(`{host:.+}`)
