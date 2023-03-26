@@ -31,4 +31,4 @@ spec:
   redirectRegex:
     permanent: true
     regex: "^(http|https):\\/\\/(.*)\\.(dev\\.skyloft\\.cc)"
-    replacement: "https://($3)/notfound"
+    replacement: "https://$3/notfound"
