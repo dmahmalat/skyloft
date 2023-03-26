@@ -1,14 +1,19 @@
 deployment:
   replicas: 2
 
-ingressRoute:
-  dashboard:
-    enabled: false
-
 fullnameOverride: traefik
 
 additionalArguments:
   - "--api.insecure=true"
+
+ingressRoute:
+  dashboard:
+    enabled: false
+
+providers:
+  kubernetesIngress:
+    publishedService:
+      enabled: true
 
 tolerations:
 - key: CriticalAddonsOnly
