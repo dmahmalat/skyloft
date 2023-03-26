@@ -32,3 +32,18 @@ spec:
     permanent: true
     regex: "^(http|https):\\/\\/(.*)\\.(dev\\.skyloft\\.cc)"
     replacement: "https://$3/notfound"
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: test-errors
+  namespace: core-services
+spec:
+  errors:
+    status:
+      - "400-599"
+    query: /{status}.html
+    service:
+      name: errorpages
+      port: 80
