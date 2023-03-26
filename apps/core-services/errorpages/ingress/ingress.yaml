@@ -12,8 +12,8 @@ spec:
       paths:
       - path: /notfound
         pathType: Prefix
-        backend:
-          service:
-            name: errorpages
-            port:
-              number: 404
+        # backend:
+        #   service:
+        #     name: errorpages
+        #     port:
+        #       number: 404
