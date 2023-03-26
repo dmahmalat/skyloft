@@ -6,7 +6,6 @@ metadata:
 spec:
   entryPoints:
   - web
-  - websecure
   tls:
     secretName: cert-dev.skyloft.cc
   routes:
