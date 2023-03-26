@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minio-service
+  namespace: core-services
+spec:
+  tls:
+  - secretName: cert-s3.dev.skyloft.cc
+  rules:
+  - host: s3.dev.skyloft.cc
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: minio
+            port:
+              number: 9000
