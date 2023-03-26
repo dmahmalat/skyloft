@@ -5,8 +5,8 @@ fullnameOverride: traefik
 
 additionalArguments:
   - "--api.insecure=true"
-  - "--entrypoints.web.http.middlewares=core-services-redirect-errors@kubernetescrd"
-  - "--entrypoints.websecure.http.middlewares=core-services-redirect-errors@kubernetescrd"
+  #- "--entrypoints.web.http.middlewares=core-services-redirect-errors@kubernetescrd"
+  #- "--entrypoints.websecure.http.middlewares=core-services-redirect-errors@kubernetescrd"
 
 ingressRoute:
   dashboard:
