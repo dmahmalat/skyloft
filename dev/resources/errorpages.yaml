@@ -8,9 +8,6 @@ spec:
   sources:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
-    path: apps/core-services/errorpages/ingress
-  - repoURL: https://github.com/dmahmalat/skyloft.git
-    targetRevision: HEAD
     path: apps/core-services/errorpages/resources
     directory:
       recurse: true
