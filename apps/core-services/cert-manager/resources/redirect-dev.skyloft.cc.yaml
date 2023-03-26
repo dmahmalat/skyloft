@@ -1,31 +1,13 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: redirect-dev.skyloft.cc
+  name: redirect-test
   namespace: core-services
   annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-dev@kubernetescrd
+    traefik.ingress.kubernetes.io/preserve-host: "true"
+    traefik.ingress.kubernetes.io/redirect-permanent: "true"
+    traefik.ingress.kubernetes.io/redirect-regex: "^(.*)"
+    traefik.ingress.kubernetes.io/redirect-replacement: "https://www.google.com"
 spec:
   rules:
-  - host: "*.dev.skyloft.cc"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: nowhere
-            port:
-              number: 1
-
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: redirect-dev
-  namespace: core-services
-spec:
-  redirectRegex:
-    regex: "(.)*"
-    replacement: "http://google.com"
-    permanent: true
+  - host: *.dev.skyloft.cc
