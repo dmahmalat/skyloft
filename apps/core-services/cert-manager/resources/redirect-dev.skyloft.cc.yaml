@@ -33,7 +33,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`*.dev.skyloft.cc`)
+      match: HostRegexp('^.*dev\.skyloft\.cc')
       middlewares:
         - name: redirect-test
           namespace: core-services
