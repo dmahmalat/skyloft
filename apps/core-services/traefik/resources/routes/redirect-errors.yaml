@@ -17,5 +17,5 @@ spec:
       name: errorpages
       port: 80
     middlewares:
-    - name: redirect-errors
+    - name: redirect-subdomains
       namespace: core-services
