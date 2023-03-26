@@ -11,7 +11,7 @@ spec:
     match: HostRegexp(`{host:.+}`)
     priority: 1
     middlewares:
-    - name: redirect-errors
+    - name: redirect-subdomains
       namespace: core-services
     services:
     - kind: Service
