@@ -11,9 +11,9 @@ spec:
   - kind: Rule
     match: HostRegexp(`{host:.+}`) || PathRegexp(`{path:.+}`)
     # services:
-    #   - kind: Service
-    #     name: errorpages
-    #     port: 80
+    # - kind: Service
+    #   name: errorpages
+    #   port: 80
     middlewares:
     - name: redirect-subdomains
       namespace: core-services
