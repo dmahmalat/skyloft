@@ -22,6 +22,6 @@ spec:
         - containerPort: 8080
         env:
         - name: TEMPLATE_NAME
-          value: l7-dark
+          value: "shuffle"
         - name: SHOW_DETAILS
           value: "true"
