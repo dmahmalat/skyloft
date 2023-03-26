@@ -11,7 +11,8 @@ spec:
     secretName: cert-dev.skyloft.cc
   routes:
   - kind: Rule
-    match: Path(`/`)
+    match: HostRegexp(`{host:.+}`)
+    priority: 1
     middlewares:
     - name: redirect-subdomains
       namespace: core-services
