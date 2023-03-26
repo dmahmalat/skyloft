@@ -17,3 +17,17 @@ spec:
     - http01:
         ingress:
           class: traefik
+
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: dev.skyloft.cc
+  namespace: core-services
+spec:
+  dnsNames:
+    - dev.skyloft.cc
+  secretName: cert-dev.skyloft.cc
+  issuerRef:
+    name: skyloft.cc
+    kind: ClusterIssuer

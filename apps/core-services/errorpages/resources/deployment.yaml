@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: errorpages
+  namespace: core-services
+  labels:
+    app: errorpages
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: errorpages
+  template:
+    metadata:
+      labels:
+        app: errorpages
+    spec:
+      containers:
+      - name: errorpages
+        image: ghcr.io/tarampampam/error-pages
+        ports:
+        - containerPort: 8080
+        env:
+        - name: TEMPLATE_NAME
+          value: l7-dark
+        - name: SHOW_DETAILS
+          value: true

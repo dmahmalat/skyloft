@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: errorpages
+  namespace: core-services
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: core-services-redirect-https@kubernetescrd
+spec:
+  tls:
+  - secretName: cert-dev.skyloft.cc
+  rules:
+  - host: dev.skyloft.cc
+    http:
+      paths:
+      - path: /notfound
+        pathType: Prefix
+        backend:
+          service:
+            name: errorpages
+            port:
+              number: 80

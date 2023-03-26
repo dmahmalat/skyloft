@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: errorpages-resources
+  namespace: core-services
+spec:
+  project: core-services
+  sources:
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: apps/core-services/errorpages/ingress
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: apps/core-services/errorpages/resources
+    directory:
+      recurse: true
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: core-services
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=false
+    automated:
+      selfHeal: true
+      prune: true
