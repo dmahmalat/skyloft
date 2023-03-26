@@ -10,4 +10,4 @@ metadata:
     traefik.ingress.kubernetes.io/redirect-replacement: "https://www.google.com"
 spec:
   rules:
-  - host: *.dev.skyloft.cc
+  - host: "*.dev.skyloft.cc"
