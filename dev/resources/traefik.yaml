@@ -9,6 +9,11 @@ spec:
   - repoURL: https://github.com/dmahmalat/skyloft.git
     targetRevision: HEAD
     path: apps/core-services/traefik/ingress
+  - repoURL: https://github.com/dmahmalat/skyloft.git
+    targetRevision: HEAD
+    path: apps/core-services/traefik/resources
+    directory:
+      recurse: true
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services

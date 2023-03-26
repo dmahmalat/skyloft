@@ -1,0 +1,10 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-subdomains
+  namespace: core-services
+spec:
+  redirectRegex:
+    permanent: true
+    regex: "^(http|https):\\/\\/(.*)\\.(dev\\.skyloft\\.cc)"
+    replacement: "https://$3/notfound"

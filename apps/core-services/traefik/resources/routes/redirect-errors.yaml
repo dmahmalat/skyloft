@@ -1,0 +1,22 @@
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: redirect-errors
+#   namespace: core-services
+# spec:
+#   entryPoints:
+#   - web
+#   - websecure
+#   routes:
+#   - kind: Rule
+#     match: PathRegexp(`{regex:.+}`) #|| HostRegexp(`{host:.+}`)
+#     # services:
+#     # - kind: Service
+#     #   name: errorpages
+#     #   port: 80
+#     middlewares:
+#     - name: redirect-subdomains
+#       namespace: core-services
+#     services:
+#     - kind: TraefikService
+#       name: noop@internal
