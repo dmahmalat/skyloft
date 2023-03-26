@@ -13,5 +13,6 @@ spec:
   - kind: Rule
     match: Host(`dev.skyloft.cc`) && Path(`/notfound`)
     services:
-    - kind: TraefikService
-      name: noop@internal
+    - kind: Service
+      name: errorpages
+      port: 404 # Non existant port to force the 404 page.
