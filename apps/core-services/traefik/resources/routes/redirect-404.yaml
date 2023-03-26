@@ -15,9 +15,8 @@ spec:
     - name: redirect-subdomains
       namespace: core-services
     services:
-    - kind: Service
-      name: errorpages
-      port: 80
+    - kind: TraefikService
+      name: noop@internal
 
 ---
 apiVersion: networking.k8s.io/v1
