@@ -15,14 +15,14 @@ spec:
         key: eab-key
     solvers:
     - dns01:
-      webhook:
-        groupName: acmedns.googleapis.com
-        solverName: google-domains
-        config:
-          apiUrl: https://acmedns.googleapis.com/v1
-          domainName: skyloft.cc
-          secretName: cert-domain-tls-key-skyloft.cc
-          secretKeyName: acme-key
+        webhook:
+          groupName: acmedns.googleapis.com
+          solverName: google-domains
+          config:
+            apiUrl: https://acmedns.googleapis.com/v1
+            domainName: skyloft.cc
+            secretName: cert-domain-tls-key-skyloft.cc
+            secretKeyName: acme-key
 
 ---
 apiVersion: cert-manager.io/v1
