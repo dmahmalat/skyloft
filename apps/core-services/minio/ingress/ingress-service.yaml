@@ -5,7 +5,7 @@ metadata:
   namespace: core-services
 spec:
   tls:
-  - secretName: cert-s3.dev.skyloft.cc
+  - secretName: cert-dev.skyloft.cc
   rules:
   - host: s3.dev.skyloft.cc
     http:

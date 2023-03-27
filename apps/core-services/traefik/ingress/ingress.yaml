@@ -5,7 +5,7 @@ metadata:
   namespace: core-services
 spec:
   tls:
-  - secretName: cert-ingress.dev.skyloft.cc
+  - secretName: cert-dev.skyloft.cc
   rules:
   - host: ingress.dev.skyloft.cc
     http:

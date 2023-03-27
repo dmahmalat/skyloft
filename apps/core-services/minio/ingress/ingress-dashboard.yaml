@@ -7,7 +7,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.middlewares: core-services-strip-prefix@kubernetescrd
 spec:
   tls:
-  - secretName: cert-s3.dev.skyloft.cc
+  - secretName: cert-dev.skyloft.cc
   rules:
   - host: s3.dev.skyloft.cc
     http:

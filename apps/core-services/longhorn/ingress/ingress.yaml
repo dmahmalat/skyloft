@@ -5,7 +5,7 @@ metadata:
   namespace: core-services
 spec:
   tls:
-  - secretName: cert-storage.dev.skyloft.cc
+  - secretName: cert-dev.skyloft.cc
   rules:
   - host: storage.dev.skyloft.cc
     http:
