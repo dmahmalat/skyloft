@@ -10,7 +10,7 @@ spec:
     targetRevision: HEAD
     ref: skyloft
   - repoURL: https://dmahmalat.github.io/charts/
-    targetRevision: v1.0.2
+    targetRevision: v1.1.0
     chart: cert-manager-webhook-google-domains
     helm:
       valueFiles:
