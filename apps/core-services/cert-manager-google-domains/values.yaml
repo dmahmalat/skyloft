@@ -5,6 +5,9 @@ certManager:
   serviceAccountName: cert-manager
   namespace: core-services
 
+secretName:
+- cert-domain-tls-key-skyloft.cc
+
 tolerations:
 - key: CriticalAddonsOnly
   operator: Exists
