@@ -32,6 +32,7 @@ metadata:
 spec:
   dnsNames:
   - dev.skyloft.cc
+  - "*.dev.skyloft.cc"
   secretName: cert-dev.skyloft.cc
   issuerRef:
     name: skyloft.cc
