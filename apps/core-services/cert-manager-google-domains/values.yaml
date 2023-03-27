@@ -1,6 +1,10 @@
 replicaCount: 2
 fullnameOverride: cert-manager-google-domains
 
+certManager:
+  serviceAccountName: cert-manager
+  namespace: core-services
+
 tolerations:
 - key: CriticalAddonsOnly
   operator: Exists
