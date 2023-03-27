@@ -14,9 +14,14 @@ spec:
     privateKeySecretRef:
       name: cert-eab-auth-skyloft.cc
     solvers:
-    - http01:
-        ingress:
-          class: traefik
+    - dns01:
+        webhook:
+          groupName: acmedns.googleapis.com
+          solverName: google-domains
+          config:
+            apiUrl: https://acmedns.googleapis.com/v1
+            zoneName: skyloft.cc.
+            secretName: cert-eab-key-skyloft.cc
 
 ---
 apiVersion: cert-manager.io/v1
