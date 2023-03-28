@@ -18,7 +18,8 @@ spec:
       namespace: '{{`{{namespace}}`}}'
       labels:
         chart: {{ include "skyloft.chart" . }}
-      annotations: '{{`{{priority}}`}}'
+      annotations:
+        argocd.argoproj.io/hook: '{{`{{order}}`}}'
     spec:
       project: '{{`{{project}}`}}'
       sources:
