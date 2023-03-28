@@ -7,11 +7,11 @@ metadata:
     chart: {{ include "skyloft.chart" . }}
 spec:
   generators:
-    - git:
+  - git:
       repoURL: https://github.com/dmahmalat/skyloft.git
       revision: HEAD
       files:
-        - path: "apps/**/app*.yaml"
+      - path: "apps/**/app*.yaml"
   template:
     metadata:
       name: '{{`{{appname}}`}}'
