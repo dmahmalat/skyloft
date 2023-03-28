@@ -29,7 +29,7 @@ spec:
         chart: '{{`{{chart.name}}`}}'
         helm:
           valueFiles:
-          - $skyloft/apps/{{`{{namespace}}`}}/{{`{{path}}`}}/values{{`{{label}}`}}-{{ .Values.landscape }}.yaml
+          - $skyloft/apps/{{`{{namespace}}`}}/../../{{`{{path}}`}}/values{{`{{label}}`}}-{{ .Values.landscape }}.yaml
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{`{{chart.namespace}}`}}'
