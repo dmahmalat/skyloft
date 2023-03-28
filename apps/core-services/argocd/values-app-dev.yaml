@@ -4,6 +4,12 @@ configs:
   cm:
     "timeout.reconciliation": 60s
     "resource.customizations": |
+      argoproj.io/ApplicationSet:
+        health.lua: |
+          hs = {}
+          hs.status = "Progressing"
+          hs.message = "LOL"
+          return hs
       argoproj.io/Application:
         health.lua: |
           hs = {}
