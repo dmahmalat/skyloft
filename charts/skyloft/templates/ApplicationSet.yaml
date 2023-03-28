@@ -18,6 +18,8 @@ spec:
       namespace: '{{`{{namespace}}`}}'
       labels:
         chart: {{ include "skyloft.chart" . }}
+      annotations:
+        argocd.argoproj.io/sync-wave: '{{`{{priority}}`}}'
     spec:
       project: '{{`{{project}}`}}'
       sources:
