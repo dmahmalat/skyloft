@@ -3,6 +3,6 @@ image: ghcr.io/tarampampam/error-pages
 
 template:
   name: shuffle
-  showDetails: "true"
+  showDetails: '"true"'
 
 tolerations: []
