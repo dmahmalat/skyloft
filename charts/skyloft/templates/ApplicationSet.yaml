@@ -14,8 +14,10 @@ spec:
     - path: "apps/**.json"
   template:
     metadata:
-    name: '{{`{{appname}}`}}'
-    namespace: '{{`{{namespace}}`}}'
+      name: '{{`{{appname}}`}}'
+      namespace: '{{`{{namespace}}`}}'
+      labels:
+        chart: {{ include "skyloft.chart" . }}
     spec:
       project: '{{`{{project}}`}}'
       sources:
