@@ -8,12 +8,12 @@ configs:
         health.lua: |
           hs = {}
           hs.status = "Progressing"
-          hs.message = "LOL"
+          hs.message = "LOLZA"
           return hs
       argoproj.io/Application:
         health.lua: |
           hs = {}
-          hs.status = "Progressing"
+          hs.status = "Degraded"
           hs.message = "LOL"
           return hs
 
