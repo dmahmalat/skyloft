@@ -1,9 +1,11 @@
-appname: longhorn-resources
+appname: traefik-resources
 namespace: core-services
 project: core-services
+path: traefik
+label: -resources
 
 chart:
   repo: https://dmahmalat.github.io/charts/
   version: v1.0.0
-  name: longhorn-resources
+  name: traefik-resources
   namespace: core-services

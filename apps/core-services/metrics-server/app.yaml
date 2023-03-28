@@ -1,6 +1,8 @@
 appname: metrics-server
 namespace: core-services
 project: core-services
+path: metrics-server
+label: ""
 
 chart:
   repo: https://kubernetes-sigs.github.io/metrics-server/

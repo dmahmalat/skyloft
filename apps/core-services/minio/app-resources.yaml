@@ -1,9 +1,11 @@
-appname: traefik-resources
+appname: minio-resources
 namespace: core-services
 project: core-services
+path: minio
+label: -resources
 
 chart:
   repo: https://dmahmalat.github.io/charts/
   version: v1.0.0
-  name: traefik-resources
+  name: minio-resources
   namespace: core-services

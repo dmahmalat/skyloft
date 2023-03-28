@@ -11,7 +11,7 @@ spec:
     repoURL: https://github.com/dmahmalat/skyloft.git
     revision: HEAD
     files:
-    - path: "apps/**/**/app.json"
+    - path: "apps/**/app*.yaml"
   template:
     metadata:
       name: '{{`{{appname}}`}}'
@@ -29,8 +29,8 @@ spec:
         chart: '{{`{{chart.name}}`}}'
         helm:
           valueFiles:
-          - $skyloft/apps/{{`{{namespace}}`}}/{{`{{appname}}`}}/values-{{ .Values.landscape }}.yaml
-      destination: 
+          - $skyloft/apps/{{`{{namespace}}`}}/{{`{{path}}`}}/values{{`{{label}}`}}-{{ .Values.landscape }}.yaml
+      destination:
         server: https://kubernetes.default.svc
         namespace: '{{`{{chart.namespace}}`}}'
       syncPolicy:

@@ -1,9 +1,11 @@
-appname: cockroachdb-resources
+appname: longhorn-resources
 namespace: core-services
 project: core-services
+path: longhorn
+label: -resources
 
 chart:
   repo: https://dmahmalat.github.io/charts/
   version: v1.0.0
-  name: cockroachdb-resources
+  name: longhorn-resources
   namespace: core-services

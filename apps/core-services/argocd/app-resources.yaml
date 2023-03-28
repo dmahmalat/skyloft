@@ -1,9 +1,11 @@
-appname: minio-resources
+appname: argocd-resources
 namespace: core-services
 project: core-services
+path: argocd
+label: -resources
 
 chart:
   repo: https://dmahmalat.github.io/charts/
   version: v1.0.0
-  name: minio-resources
+  name: argocd-resources
   namespace: core-services

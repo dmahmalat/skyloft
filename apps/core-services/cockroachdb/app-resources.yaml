@@ -1,9 +1,11 @@
-appname: cert-manager-resources
+appname: cockroachdb-resources
 namespace: core-services
 project: core-services
+path: cockroachdb
+label: -resources
 
 chart:
   repo: https://dmahmalat.github.io/charts/
   version: v1.0.0
-  name: cert-manager-resources
+  name: cockroachdb-resources
   namespace: core-services

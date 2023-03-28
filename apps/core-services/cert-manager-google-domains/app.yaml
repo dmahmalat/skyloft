@@ -1,6 +1,8 @@
 appname: cert-manager-google-domains
 namespace: core-services
 project: core-services
+path: cert-manager-google-domains
+label: ""
 
 chart:
   repo: https://dmahmalat.github.io/charts/

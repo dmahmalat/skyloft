@@ -1,6 +1,8 @@
 appname: cockroachdb
 namespace: core-services
 project: core-services
+path: cockroachdb
+label: ""
 
 chart:
   repo: https://charts.cockroachdb.com

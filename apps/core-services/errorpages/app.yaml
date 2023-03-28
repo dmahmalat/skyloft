@@ -1,6 +1,8 @@
 appname: errorpages
 namespace: core-services
 project: core-services
+path: errorpages
+label: ""
 
 chart:
   repo: https://dmahmalat.github.io/charts/

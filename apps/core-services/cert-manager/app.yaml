@@ -1,6 +1,8 @@
 appname: cert-manager
 namespace: core-services
 project: core-services
+path: cert-manager
+label: ""
 
 chart:
   repo: https://charts.jetstack.io
