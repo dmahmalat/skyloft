@@ -1,0 +1,9 @@
+appname: cockroachdb
+namespace: core-services
+project: core-services
+
+chart:
+  repo: https://charts.cockroachdb.com
+  version: v10.0.6
+  name: cockroachdb
+  namespace: core-services

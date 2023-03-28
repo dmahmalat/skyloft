@@ -1,0 +1,9 @@
+appname: errorpages
+namespace: core-services
+project: core-services
+
+chart:
+  repo: https://dmahmalat.github.io/charts/
+  version: v1.0.0
+  name: errorpages
+  namespace: core-services

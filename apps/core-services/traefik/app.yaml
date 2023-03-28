@@ -1,0 +1,9 @@
+appname: traefik
+namespace: core-services
+project: core-services
+
+chart:
+  repo: https://traefik.github.io/charts
+  version: v21.2.0
+  name: traefik
+  namespace: core-services

@@ -1,0 +1,9 @@
+appname: minio
+namespace: core-services
+project: core-services
+
+chart:
+  repo: https://charts.bitnami.com/bitnami
+  version: v12.2.1
+  name: minio
+  namespace: core-services
