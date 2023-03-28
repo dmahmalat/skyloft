@@ -2,7 +2,7 @@ appname: traefik-resources
 namespace: core-services
 project: core-services
 label: resources
-priority: 0
+order: 0
 
 chart:
   repo: https://dmahmalat.github.io/charts/

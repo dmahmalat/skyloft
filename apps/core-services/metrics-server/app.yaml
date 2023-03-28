@@ -2,7 +2,7 @@ appname: metrics-server
 namespace: core-services
 project: core-services
 label: app
-priority: 1
+order: 1
 
 chart:
   repo: https://kubernetes-sigs.github.io/metrics-server/

@@ -2,7 +2,7 @@ appname: cert-manager-google-domains
 namespace: core-services
 project: core-services
 label: app
-priority: 1
+order: 1
 
 chart:
   repo: https://dmahmalat.github.io/charts/
