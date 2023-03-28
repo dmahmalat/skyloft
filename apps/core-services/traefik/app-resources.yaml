@@ -1,8 +1,7 @@
 appname: traefik-resources
 namespace: core-services
 project: core-services
-path: traefik
-label: -resources
+label: resources
 
 chart:
   repo: https://dmahmalat.github.io/charts/

@@ -1,8 +1,7 @@
 appname: minio
 namespace: core-services
 project: core-services
-path: minio
-label: ""
+label: app
 
 chart:
   repo: https://charts.bitnami.com/bitnami

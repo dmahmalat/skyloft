@@ -1,8 +1,7 @@
 appname: traefik
 namespace: core-services
 project: core-services
-path: traefik
-label: ""
+label: app
 
 chart:
   repo: https://traefik.github.io/charts

@@ -1,8 +1,7 @@
 appname: longhorn
 namespace: core-services
 project: core-services
-path: longhorn
-label: ""
+label: app
 
 chart:
   repo: https://charts.longhorn.io

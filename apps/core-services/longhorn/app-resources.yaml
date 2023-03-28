@@ -1,8 +1,7 @@
 appname: longhorn-resources
 namespace: core-services
 project: core-services
-path: longhorn
-label: -resources
+label: resources
 
 chart:
   repo: https://dmahmalat.github.io/charts/
