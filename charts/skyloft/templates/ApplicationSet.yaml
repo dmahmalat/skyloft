@@ -11,7 +11,7 @@ spec:
     repoURL: https://github.com/dmahmalat/skyloft.git
     revision: HEAD
     files:
-    - path: "apps/**.json"
+    - path: "apps/**/app.json"
   template:
     metadata:
       name: '{{`{{appname}}`}}'
