@@ -17,6 +17,9 @@ repoServer:
 
 applicationSet:
   replicaCount: 2
+  extraEnv:
+  - name: "ARGOCD_SYNC_WAVE_DELAY"
+    value: 60
 
 global:
   tolerations:
