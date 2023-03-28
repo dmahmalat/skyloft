@@ -2,7 +2,7 @@ appname: longhorn
 namespace: core-services
 project: core-services
 label: app
-priority: potate
+priority: "potate"
 
 chart:
   repo: https://charts.longhorn.io
