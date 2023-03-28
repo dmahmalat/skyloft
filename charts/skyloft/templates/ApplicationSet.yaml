@@ -18,8 +18,7 @@ spec:
       namespace: '{{`{{namespace}}`}}'
       labels:
         chart: {{ include "skyloft.chart" . }}
-      annotations:
-        '{{`{{priority}}`}}'
+      annotations: '{{`{{priority}}`}}'
     spec:
       project: '{{`{{project}}`}}'
       sources:
