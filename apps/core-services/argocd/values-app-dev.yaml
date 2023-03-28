@@ -1,6 +1,8 @@
 configs:
   params:
     "server.insecure": true
+  cm:
+    "timeout.reconciliation": 60s
 
 controller:
   replicas: 2
@@ -17,13 +19,6 @@ repoServer:
 
 applicationSet:
   replicaCount: 2
-  extraEnv:
-  - name: "ARGOCD_SYNC_WAVE_DELAY"
-    value: 60
-
-configs:
-  cm:
-    "timeout.reconciliation": 60s
 
 global:
   tolerations:
