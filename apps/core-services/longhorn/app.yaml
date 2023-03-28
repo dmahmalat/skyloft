@@ -2,7 +2,7 @@ appname: longhorn
 namespace: core-services
 project: core-services
 label: app
-priority: "-1"
+priority: 'argocd.argoproj.io/sync-wave: "0"'
 
 chart:
   repo: https://charts.longhorn.io
