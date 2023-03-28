@@ -21,6 +21,10 @@ applicationSet:
   - name: "ARGOCD_SYNC_WAVE_DELAY"
     value: 60
 
+configs:
+  cm:
+    "timeout.reconciliation": 60s
+
 global:
   tolerations:
   - key: CriticalAddonsOnly
