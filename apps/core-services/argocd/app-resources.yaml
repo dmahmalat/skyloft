@@ -1,7 +1,6 @@
 appname: argocd-resources
 namespace: core-services
 project: core-services
-path: argocd
 label: -resources
 
 chart:
