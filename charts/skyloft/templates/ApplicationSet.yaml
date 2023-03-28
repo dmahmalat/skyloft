@@ -16,24 +16,24 @@ spec:
     metadata:
     name: '{{`{{appname}}`}}'
     namespace: '{{`{{namespace}}`}}'
-  spec:
-    project: '{{`{{project}}`}}'
-    sources:
-    - repoURL: https://github.com/dmahmalat/skyloft.git
-      targetRevision: HEAD
-      ref: skyloft
-    - repoURL: '{{`{{chart.repo}}`}}'
-      targetRevision: '{{`{{chart.version}}`}}'
-      chart: '{{`{{chart.name}}`}}'
-      helm:
-        valueFiles:
-        - $skyloft/apps/{{`{{namespace}}`}}/{{`{{appname}}`}}/values-{{ .Values.landscape }}.yaml
-    destination: 
-      server: https://kubernetes.default.svc
-      namespace: '{{`{{chart.namespace}}`}}'
-    syncPolicy:
-      syncOptions:
-      - CreateNamespace=false
-      automated:
-        selfHeal: true
-        prune: true
+    spec:
+      project: '{{`{{project}}`}}'
+      sources:
+      - repoURL: https://github.com/dmahmalat/skyloft.git
+        targetRevision: HEAD
+        ref: skyloft
+      - repoURL: '{{`{{chart.repo}}`}}'
+        targetRevision: '{{`{{chart.version}}`}}'
+        chart: '{{`{{chart.name}}`}}'
+        helm:
+          valueFiles:
+          - $skyloft/apps/{{`{{namespace}}`}}/{{`{{appname}}`}}/values-{{ .Values.landscape }}.yaml
+      destination: 
+        server: https://kubernetes.default.svc
+        namespace: '{{`{{chart.namespace}}`}}'
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=false
+        automated:
+          selfHeal: true
+          prune: true
