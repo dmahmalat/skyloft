@@ -1,9 +1,9 @@
-check-charts:
+verify-charts:
 	@for d in charts/*/; do \
     	helm lint $$d; \
 	done
 
-package-charts:
+generate-charts:
 	@rm -rf _chart/
 	@for d in charts/*/; do \
 		echo "Packing chart: $$d"; \
