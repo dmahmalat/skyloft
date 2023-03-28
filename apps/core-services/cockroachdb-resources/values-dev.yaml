@@ -1,0 +1,4 @@
+ingress:
+  enabled: true
+  host: db.dev.skyloft.cc
+  cert: cert-dev.skyloft.cc

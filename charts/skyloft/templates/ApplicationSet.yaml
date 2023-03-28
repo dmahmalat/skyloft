@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: skyloft-{{ .Values.landscape }}
+  namespace: core-services
+  labels:
+    chart: {{ include "skyloft.chart" . }}
+spec:
+  generators:
+  - git:
+    repoURL: https://github.com/dmahmalat/skyloft.git
+    revision: HEAD
+    files:
+    - path: "apps/**.json"
+  template:
+    metadata:
+    name: '{{`{{appname}}`}}'
+    namespace: '{{`{{namespace}}`}}'
+  spec:
+    project: '{{`{{project}}`}}'
+    sources:
+    - repoURL: https://github.com/dmahmalat/skyloft.git
+      targetRevision: HEAD
+      ref: skyloft
+    - repoURL: '{{`{{chart.repo}}`}}'
+      targetRevision: '{{`{{chart.version}}`}}'
+      chart: '{{`{{chart.name}}`}}'
+      helm:
+        valueFiles:
+        - $skyloft/apps/{{`{{namespace}}`}}/{{`{{appname}}`}}/values-{{ .Values.landscape }}.yaml
+    destination: 
+      server: https://kubernetes.default.svc
+      namespace: '{{`{{chart.namespace}}`}}'
+    syncPolicy:
+      syncOptions:
+      - CreateNamespace=false
+      automated:
+        selfHeal: true
+        prune: true

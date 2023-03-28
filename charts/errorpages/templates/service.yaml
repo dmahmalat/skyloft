@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: errorpages
+  namespace: core-services
+  labels:
+    chart: {{ include "errorpages.chart" . }}
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ include "errorpages.name" . }}
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

@@ -1,0 +1,11 @@
+{
+    "appname": "metrics-server",
+    "namespace": "core-services",
+    "project": "core-services",
+    "chart": {
+        "repo": "https://kubernetes-sigs.github.io/metrics-server/",
+        "version": "v3.8.4",
+        "name": "metrics-server",
+        "namespace": "kube-system"
+    }
+}

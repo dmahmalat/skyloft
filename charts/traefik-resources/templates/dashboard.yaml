@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-dashboard
+  namespace: core-services
+  labels:
+    chart: {{ include "traefik-resources.chart" . }}
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/instance: traefik-core-services
+    app.kubernetes.io/name: traefik
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9000

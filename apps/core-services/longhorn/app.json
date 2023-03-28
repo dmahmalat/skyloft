@@ -1,0 +1,11 @@
+{
+    "appname": "longhorn",
+    "namespace": "core-services",
+    "project": "core-services",
+    "chart": {
+        "repo": "https://charts.longhorn.io",
+        "version": "v1.4.1",
+        "name": "longhorn",
+        "namespace": "core-services"
+    }
+}

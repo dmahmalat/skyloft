@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: errorpages
+  namespace: core-services
+  labels:
+    app: {{ include "errorpages.name" . }}
+    chart: {{ include "errorpages.chart" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "errorpages.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "errorpages.name" . }}
+    spec:
+      {{- if .Values.tolerations }}
+      tolerations: {{- include "common.tplvalues.render" (dict "value" .Values.tolerations "context" .) | nindent 8 }}
+      {{- end }}
+      containers:
+      - name: errorpages
+        image: {{ .Values.image }}
+        ports:
+        - containerPort: 8080
+        env:
+        - name: TEMPLATE_NAME
+          value: {{ .Values.template.name }}
+        - name: SHOW_DETAILS
+          value: {{ .Values.template.showDetails }}

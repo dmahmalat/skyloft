@@ -1,0 +1,14 @@
+apiVersion: longhorn.io/v1beta1
+kind: RecurringJob
+metadata:
+  name: longhorn-backup
+  namespace: core-services
+  labels:
+    chart: {{ include "longhorn-resources.chart" . }}
+spec:
+  cron: {{ .Values.backup.cron }}
+  task: "backup"
+  groups:
+  - default
+  retain: 1
+  concurrency: 1

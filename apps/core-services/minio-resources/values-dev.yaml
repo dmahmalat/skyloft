@@ -1,0 +1,28 @@
+ingress:
+  enabled: true
+  host: s3.dev.skyloft.cc
+  cert: cert-dev.skyloft.cc
+
+backup:
+  cron: "45 * * * *"
+  src:
+    bucket: skyloft
+    region: skyloft
+  dst:
+    bucket: skyloft-storage-backup-dev
+
+secrets:
+  minio: minio-access-key
+  gcs: gcs-access-key
+
+image: docker.io/rclone/rclone:1.62.2
+
+tolerations:
+- key: CriticalAddonsOnly
+  operator: Exists
+- key: node-role.kubernetes.io/control-plane
+  operator: Exists
+  effect: NoSchedule
+- key: node-role.kubernetes.io/master
+  operator: Exists
+  effect: NoSchedule

@@ -1,0 +1,46 @@
+{{ range .Values.domains }}
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: {{ .topName }}
+  labels:
+    chart: {{ include "cert-manager-resources.chart" $ }}
+spec:
+  acme:
+    email: {{ $.Values.email }}
+    server: {{ $.Values.google.acmeEabUrl }}
+    privateKeySecretRef:
+      name: {{ $.Values.secrets.auth }}-{{ .topName }}
+    externalAccountBinding:
+      keyID: {{ .eabId }}
+      keySecretRef:
+        name: {{ $.Values.secrets.key }}-{{ .topName }}
+        key: eab-key
+    solvers:
+    - dns01:
+        webhook:
+          groupName: acmedns.googleapis.com
+          solverName: google-domains
+          config:
+            apiUrl: {{ $.Values.google.acmeApiUrl }}
+            domainName: {{ .topName }}
+            secretName: {{ $.Values.secrets.key }}-{{ .topName }}
+            secretKeyName: acme-key
+
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ .name }}
+  namespace: core-services
+  labels:
+    chart: {{ include "cert-manager-resources.chart" $ }}
+spec:
+  dnsNames:
+  - {{ .name }}
+  - "*.{{ .name }}"
+  secretName: cert-{{ .name }}
+  issuerRef:
+    name: {{ .topName }}
+    kind: ClusterIssuer
+{{ end }}

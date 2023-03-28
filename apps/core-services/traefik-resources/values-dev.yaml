@@ -1,0 +1,8 @@
+ingress:
+  enabled: true
+  host: ingress.dev.skyloft.cc
+  cert: cert-dev.skyloft.cc
+
+notFound:
+  host: dev.skyloft.cc
+  path: /notfound

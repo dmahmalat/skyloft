@@ -1,36 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: skyloft-dev-helm
+  name: skyloft-dev
   namespace: core-services
 spec:
   project: core-services
-  source:
-    repoURL: https://github.com/dmahmalat/skyloft.git
-    targetRevision: HEAD
-    path: dev/helm
-  destination: 
-    server: https://kubernetes.default.svc
-    namespace: core-services
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=false
-    automated:
-      selfHeal: true
-      prune: true
-
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: skyloft-dev-resources
-  namespace: core-services
-spec:
-  project: core-services
-  source:
-    repoURL: https://github.com/dmahmalat/skyloft.git
-    targetRevision: HEAD
-    path: dev/resources
+  sources:
+  - repoURL: https://dmahmalat.github.io/charts/
+    targetRevision: v1.0.0
+    chart: skyloft
+    helm:
+      parameters:
+      - name: landscape
+        value: dev
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services

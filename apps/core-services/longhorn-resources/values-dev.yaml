@@ -1,0 +1,7 @@
+ingress:
+  enabled: true
+  host: storage.dev.skyloft.cc
+  cert: cert-dev.skyloft.cc
+
+backup:
+  cron: "30 * * * *"
