@@ -2,6 +2,7 @@ appname: traefik
 namespace: core-services
 project: core-services
 label: app
+priority: 0
 
 chart:
   repo: https://traefik.github.io/charts

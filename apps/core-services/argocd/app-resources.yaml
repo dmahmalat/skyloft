@@ -2,6 +2,7 @@ appname: argocd-resources
 namespace: core-services
 project: core-services
 label: resources
+priority: 1
 
 chart:
   repo: https://dmahmalat.github.io/charts/
