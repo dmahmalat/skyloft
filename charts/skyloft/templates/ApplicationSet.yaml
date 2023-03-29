@@ -20,12 +20,12 @@ spec:
         - key: order
           operator: In
           values:
-          - 1
+          - "1"
       - matchExpressions:
         - key: order
           operator: In
           values:
-          - 2
+          - "2"
   template:
     metadata:
       name: '{{`{{appname}}`}}'
