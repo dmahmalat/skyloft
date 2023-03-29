@@ -2,7 +2,7 @@ appname: cert-manager
 namespace: core-services
 project: core-services
 label: app
-order: 2
+order: 1
 
 chart:
   repo: https://charts.jetstack.io
