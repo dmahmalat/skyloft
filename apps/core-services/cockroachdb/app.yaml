@@ -2,7 +2,7 @@ appname: cockroachdb
 namespace: core-services
 project: core-services
 label: app
-order: 1
+order: 2
 
 chart:
   repo: https://charts.cockroachdb.com

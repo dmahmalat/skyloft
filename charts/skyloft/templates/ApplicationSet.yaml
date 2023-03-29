@@ -12,14 +12,27 @@ spec:
       revision: HEAD
       files:
       - path: "apps/**/app*.yaml"
+  strategy:
+    type: RollingSync
+    rollingSync:
+      steps:
+      - matchExpressions:
+        - key: order
+          operator: In
+          values:
+          - 1
+      - matchExpressions:
+        - key: order
+          operator: In
+          values:
+          - 2
   template:
     metadata:
       name: '{{`{{appname}}`}}'
       namespace: '{{`{{namespace}}`}}'
       labels:
         chart: {{ include "skyloft.chart" . }}
-      annotations:
-        argocd.argoproj.io/sync-wave: '{{`{{order}}`}}'
+        order: '{{`{{order}}`}}'
     spec:
       project: '{{`{{project}}`}}'
       sources:

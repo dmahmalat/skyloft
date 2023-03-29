@@ -2,7 +2,7 @@ appname: longhorn
 namespace: core-services
 project: core-services
 label: app
-order: 0
+order: 1
 
 chart:
   repo: https://charts.longhorn.io

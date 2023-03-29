@@ -2,7 +2,7 @@ appname: longhorn-resources
 namespace: core-services
 project: core-services
 label: resources
-order: 1
+order: 2
 
 chart:
   repo: https://dmahmalat.github.io/charts/
