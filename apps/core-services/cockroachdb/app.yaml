@@ -6,6 +6,6 @@ order: 2
 
 chart:
   repo: https://charts.cockroachdb.com
-  version: v10.0.6
+  version: v10.0.7
   name: cockroachdb
   namespace: core-services
