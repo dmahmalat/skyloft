@@ -6,7 +6,7 @@ metadata:
 spec:
   project: core-services
   sources:
-  - repoURL: https://dmahmalat.github.io/charts/
+  - repoURL: https://dmahmalat.github.io/charts
     targetRevision: v1.0.1
     chart: skyloft
     helm:

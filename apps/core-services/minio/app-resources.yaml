@@ -5,7 +5,7 @@ label: resources
 order: 2
 
 chart:
-  repo: https://dmahmalat.github.io/charts/
+  repo: https://dmahmalat.github.io/charts
   version: v1.0.0
   name: minio-resources
   namespace: core-services
