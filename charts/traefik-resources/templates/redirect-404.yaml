@@ -55,4 +55,4 @@ spec:
           service:
             name: errorpages
             port:
-              number: 404 #Non existant: used to force a 404 page.
+              number: 80
