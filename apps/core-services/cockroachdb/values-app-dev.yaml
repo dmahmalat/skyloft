@@ -1,9 +1,12 @@
 # TEST
 conf:
   single-node: true
+  cluster-name: skyloft
 
 tls:
   enabled: false
+
+clusterDomain: db.dev.skyloft.cc
 
 storage:
   persistentVolume:
@@ -12,6 +15,14 @@ storage:
 fullnameOverride: cockroachdb
 
 init:
+  provisioning:
+    users:
+    - name: Larry
+      password: potate
+    databases:
+    - name: skyloft
+      owners:
+      - Larry
   tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
