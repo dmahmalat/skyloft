@@ -1,5 +1,5 @@
 ingress:
-  enabled: false
+  enabled: true
   host: ingress.dev.skyloft.cc
   cert: cert-dev.skyloft.cc
 
