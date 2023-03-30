@@ -11,7 +11,7 @@ spec:
   - websecure
   routes:
   - kind: Rule
-    match: HostRegexp(`{host:.+}`) && !Path(`{{ .Values.notFound.path }}`)
+    match: HostRegexp(`{host:.+}`)
     priority: 1
     middlewares:
     - name: redirect-404
@@ -32,4 +32,4 @@ metadata:
 spec:
   redirectRegex:
     regex: "^(?:https?://)?(?:[^@/]+@)?([^:/]+)"
-    replacement: https://$1{{ .Values.notFound.path }}
+    replacement: https://$1 #{{ .Values.notFound.path }}
