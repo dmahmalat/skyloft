@@ -4,5 +4,5 @@ ingress:
   cert: cert-dev.skyloft.cc
 
 notFound:
-  host: google.com
-  path: ""
+  host: dev.skyloft.cc
+  path: /notfound
