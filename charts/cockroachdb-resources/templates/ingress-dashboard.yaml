@@ -10,9 +10,9 @@ spec:
   entryPoints:
   - websecure
   tls:
-    secretName: {{ .Value.ingress.cert }}
+    secretName: {{ .Values.ingress.cert }}
   routes:
-  - match: HostSNI(`{{ .Value.ingress.host }}`)
+  - match: HostSNI(`{{ .Values.ingress.host }}`)
     services:
     - name: cockroachdb-public
       port: 8080
