@@ -1,15 +1,19 @@
+{{- if .Values.ingress.enabled }}
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRouteTCP
 metadata:
-  name: cockroachdb
+  name: cockroachdb-dashboard
   namespace: core-services
   labels:
     chart: {{ include "cockroachdb-resources.chart" . }}
 spec:
   entryPoints:
-  - db
+  - websecure
+  tls:
+    secretName: {{ .Value.ingress.cert }}
   routes:
-  - match: HostSNI(`*`)
+  - match: HostSNI(`{{ .Value.ingress.host }}`)
     services:
     - name: cockroachdb-public
-      port: 26257
+      port: 8080
+{{- end }}
