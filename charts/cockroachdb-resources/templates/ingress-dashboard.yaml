@@ -11,6 +11,7 @@ spec:
   - websecure
   tls:
     secretName: {{ .Values.ingress.cert }}
+    passthrough: true
   routes:
   - match: HostSNI(`{{ .Values.ingress.host }}`)
     services:
