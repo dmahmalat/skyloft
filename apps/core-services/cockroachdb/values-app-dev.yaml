@@ -1,5 +1,6 @@
-# tls:
-#   enabled: false
+# TEST
+conf:
+  single-node: true
 
 storage:
   persistentVolume:
@@ -19,6 +20,7 @@ init:
     effect: NoSchedule
 
 statefulset:
+  replicas: 1 #TEST
   tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
