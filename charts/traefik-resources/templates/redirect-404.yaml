@@ -35,6 +35,6 @@ spec:
     regex: ".*"
     replacement: https://{{ .Values.notFound.host }}{{ .Values.notFound.path }}
 {{- else }}
-    regex: "^(?:https?://)?(?:[^@/]+@)?([^:/]+)"
+    regex: "^(?:https?://)?(?:[^@/]+@)?([^:/]+)(?:.*)"
     replacement: https://$1{{ .Values.notFound.path }}
 {{- end }}
