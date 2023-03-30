@@ -7,8 +7,8 @@ metadata:
   labels:
     chart: {{ include "cockroachdb-resources.chart" . }}
 spec:
-  # tls:
-  # - secretName: {{ .Values.ingress.cert }}
+  tls:
+  - secretName: {{ .Values.ingress.cert }}
   rules:
   - host: {{ .Values.ingress.host }}
     http:
