@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRouteTCP
 metadata:
-  name: cockroachdb-service
+  name: cockroachdb
   namespace: core-services
   labels:
     chart: {{ include "cockroachdb-resources.chart" . }}
