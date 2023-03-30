@@ -6,8 +6,6 @@ conf:
 tls:
   enabled: false
 
-clusterDomain: db.dev.skyloft.cc
-
 storage:
   persistentVolume:
     size: 1Gi
