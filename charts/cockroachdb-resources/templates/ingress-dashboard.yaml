@@ -10,6 +10,8 @@ spec:
   entryPoints:
   - web
   - websecure
+  tls:
+    passthrough: true
   routes:
   - match: HostSNI(`{{ .Values.ingress.host }}`)
     services:
