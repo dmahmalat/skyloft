@@ -3,11 +3,44 @@ deployment:
 
 fullnameOverride: traefik
 
+ports:
+  traefik:
+    port: 9000
+    exposedPort: 9000
+    protocol: TCP
+    expose: false
+  metrics:
+    port: 9100
+    exposedPort: 9100
+    protocol: TCP
+    expose: false
+  web:
+    middlewares:
+      - core-services-redirect-https@kubernetescrd
+      - core-services-redirect-errors@kubernetescrd
+    port: 8000
+    exposedPort: 80
+    protocol: TCP
+    expose: true
+  websecure:
+    http3:
+      enabled: false
+    tls:
+      enabled: true
+    middlewares:
+      - core-services-redirect-errors@kubernetescrd
+    port: 8443
+    exposedPort: 443
+    protocol: TCP
+    expose: true
+  db:
+    port: 26257
+    exposedPort: 26257
+    protocol: TCP
+    expose: true
+
 additionalArguments:
   - "--api.insecure=true"
-  - "--entrypoints.web.http.middlewares=core-services-redirect-https@kubernetescrd"
-  - "--entrypoints.web.http.middlewares=core-services-redirect-errors@kubernetescrd"
-  - "--entrypoints.websecure.http.middlewares=core-services-redirect-errors@kubernetescrd"
 
 ingressRoute:
   dashboard:
