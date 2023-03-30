@@ -15,14 +15,6 @@ storage:
 fullnameOverride: cockroachdb
 
 init:
-  provisioning:
-    users:
-    - name: Larry
-      password: potate
-    databases:
-    - name: skyloft
-      owners:
-      - Larry
   tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
