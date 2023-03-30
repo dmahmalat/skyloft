@@ -11,5 +11,5 @@ spec:
   routes:
   - match: HostSNI(`*`)
     services:
-    - name: errorpages
-      port: 80
+    - name: cockroachdb-public
+      port: 26257
