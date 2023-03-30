@@ -9,7 +9,7 @@ spec:
   entryPoints:
   - db
   routes:
-  - match: HostSNI(`{{ .Values.ingress.host }}`)
+  - match: HostSNI(`*`)
     services:
     - name: cockroachdb
       port: 26257
