@@ -2,6 +2,9 @@
 conf:
   single-node: true
 
+tls:
+  enabled: false
+
 storage:
   persistentVolume:
     size: 1Gi
