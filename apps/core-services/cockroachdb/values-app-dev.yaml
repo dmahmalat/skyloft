@@ -1,6 +1,5 @@
-# TEST
 conf:
-  single-node: true
+  single-node: true #TEST
   cluster-name: skyloft
 
 tls:
