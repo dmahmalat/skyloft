@@ -33,26 +33,3 @@ spec:
   redirectRegex:
     regex: ".*"
     replacement: https://{{ .Values.notFound.host }}{{ .Values.notFound.path }}
-
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: redirect-404
-  namespace: core-services
-  labels:
-    chart: {{ include "traefik-resources.chart" . }}
-spec:
-  tls:
-  - secretName: {{ .Values.ingress.cert }}
-  rules:
-  - host: {{ .Values.notFound.host }}
-    http:
-      paths:
-      - path: {{ .Values.notFound.path }}
-        pathType: Prefix
-        backend:
-          service:
-            name: errorpages
-            port:
-              number: 80
