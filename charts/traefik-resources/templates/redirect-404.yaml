@@ -11,7 +11,7 @@ spec:
   - websecure
   routes:
   - kind: Rule
-    match: HostRegexp(`{host:.+}`)
+    match: HostRegexp(`{host:.+}`) && !Path(`{{ .Values.notFound.path }}`)
     priority: 1
     middlewares:
     - name: redirect-404
