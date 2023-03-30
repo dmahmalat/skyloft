@@ -6,6 +6,8 @@ metadata:
   namespace: core-services
   labels:
     chart: {{ include "cockroachdb-resources.chart" . }}
+  annotations:
+    traefik.ingress.kubernetes.io/service.serverstransport: core-services-cockroachdb@kubernetescrd
 spec:
   tls:
   - secretName: {{ .Values.ingress.cert }}
@@ -20,4 +22,16 @@ spec:
             name: cockroachdb-public
             port:
               number: 8080
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: ServersTransport
+metadata:
+  name: cockroachdb
+  namespace: core-services
+  labels:
+    chart: {{ include "cockroachdb-resources.chart" . }}
+spec:
+  serverName: {{ .Values.ingress.host }}
+  insecureSkipVerify: true
 {{- end }}
