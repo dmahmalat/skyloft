@@ -2,11 +2,6 @@ conf:
   single-node: true #TEST
   cluster-name: skyloft
 
-tls:
-  certs:
-    certManager: true
-    tlsSecret: true
-
 storage:
   persistentVolume:
     size: 1Gi
