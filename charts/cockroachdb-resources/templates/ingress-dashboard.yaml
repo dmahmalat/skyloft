@@ -14,6 +14,7 @@ spec:
     passthrough: true
   routes:
   - match: HostSNI(`{{ .Values.ingress.host }}`)
+    priority: 50
     services:
     - name: cockroachdb-public
       port: 8080
