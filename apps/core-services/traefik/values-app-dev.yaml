@@ -1,11 +1,7 @@
 deployment:
-  replicas: 1
+  replicas: 4
 
 fullnameOverride: traefik
-
-logs:
-  general:
-    level: DEBUG #TEST
 
 ports:
   traefik:
