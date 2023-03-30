@@ -3,7 +3,9 @@ conf:
   cluster-name: skyloft
 
 tls:
-  enabled: false
+  certs:
+    certManager: true
+    tlsSecret: true
 
 storage:
   persistentVolume:
