@@ -31,5 +31,5 @@ metadata:
     chart: {{ include "traefik-resources.chart" . }}
 spec:
   redirectRegex:
-    regex: ".*"
-    replacement: https://{{ .Values.notFound.host }}{{ .Values.notFound.path }}
+    regex: "^(?:https?://)?(?:[^@/]+@)?([^:/]+)"
+    replacement: https://$1{{ .Values.notFound.path }}
