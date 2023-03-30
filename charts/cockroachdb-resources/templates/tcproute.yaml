@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: cockroachdb
+  namespace: core-services
+  labels:
+    chart: {{ include "cockroachdb-resources.chart" . }}
+spec:
+  entryPoints:
+  - db
+  routes:
+  - kind: Rule
+    match: HostSNI(`{{ .Values.ingress.host }}`)
+    services:
+    - kind: Service
+      name: cockroachdb
+      port: 26257
