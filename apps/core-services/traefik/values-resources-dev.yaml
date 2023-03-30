@@ -4,5 +4,5 @@ ingress:
   cert: cert-dev.skyloft.cc
 
 notFound:
-  host: potate.dev.skyloft.cc
+  host: ""
   path: /notfound
