@@ -3,6 +3,10 @@ deployment:
 
 fullnameOverride: traefik
 
+logs:
+  general:
+    level: DEBUG #TEST
+
 ports:
   traefik:
     port: 9000
