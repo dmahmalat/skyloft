@@ -1,23 +1,18 @@
 {{- if .Values.ingress.enabled }}
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
 metadata:
-  name: cockroachdb
+  name: cockroachdb-dashboard
   namespace: core-services
   labels:
     chart: {{ include "cockroachdb-resources.chart" . }}
 spec:
-  tls:
-  - secretName: {{ .Values.ingress.cert }}
-  rules:
-  - host: {{ .Values.ingress.host }}
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: cockroachdb-public
-            port:
-              number: 8080
+  entryPoints:
+  - web
+  - websecure
+  routes:
+  - match: HostSNI(`{{ .Values.ingress.host }}`)
+    services:
+    - name: cockroachdb-public
+      port: 8080
 {{- end }}
