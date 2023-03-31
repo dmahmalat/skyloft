@@ -1,5 +1,4 @@
 conf:
-  single-node: true #TEST
   cluster-name: skyloft
 
 storage:
@@ -26,7 +25,7 @@ init:
     effect: NoSchedule
 
 statefulset:
-  replicas: 1 #TEST
+  replicas: 4
   tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
