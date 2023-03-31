@@ -8,6 +8,12 @@ storage:
 
 fullnameOverride: cockroachdb
 
+service:
+  public:
+    annotations:
+      traefik.ingress.kubernetes.io/service.serversscheme: https
+      traefik.ingress.kubernetes.io/service.serverstransport: core-services-cockroachdb@kubernetescrd
+
 init:
   tolerations:
   - key: CriticalAddonsOnly
