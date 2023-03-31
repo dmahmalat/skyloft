@@ -20,6 +20,7 @@ spec:
             name: cockroachdb-public
             port:
               number: 8080
+{{- end }}
 
 ---
 apiVersion: traefik.containo.us/v1alpha1
@@ -32,4 +33,3 @@ metadata:
 spec:
   serverName: {{ .Values.ingress.host }}
   insecureSkipVerify: true
-{{- end }}
