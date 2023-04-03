@@ -23,7 +23,7 @@ tenant:
     objectLock: false
   pools:
   - servers: 4
-    name: minio
+    name: pod
     volumesPerServer: 1
     size: 2Gi
     tolerations:
