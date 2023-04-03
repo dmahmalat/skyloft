@@ -23,7 +23,7 @@ tenant:
     objectLock: false
   pools:
   - servers: 4
-    name: skyloft
+    name: minio
     volumesPerServer: 1
     size: 2Gi
     tolerations:
