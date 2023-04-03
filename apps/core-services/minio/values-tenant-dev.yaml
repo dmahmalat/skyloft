@@ -1,7 +1,7 @@
 fullnameOverride: minio-tenant
 
 tenant:
-  name: skyloft
+  name: minio-skyloft
   env:
   - name: MINIO_SERVER_URL
     value: https://s3.dev.skyloft.cc/
