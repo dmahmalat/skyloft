@@ -22,6 +22,7 @@ persistence:
   size: 2Gi
 
 tls:
+  enabled: true
   existingSecret: cert-dev.skyloft.cc
 
 defaultBuckets: "skyloft"
