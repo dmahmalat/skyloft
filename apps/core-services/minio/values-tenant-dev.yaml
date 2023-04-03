@@ -5,8 +5,6 @@ secrets: null
 tenant:
   name: minio-skyloft
   env:
-  - name: MINIO_SERVER_URL
-    value: https://s3.dev.skyloft.cc/
   - name: MINIO_BROWSER_REDIRECT_URL
     value: https://s3.dev.skyloft.cc/dashboard/
   - name: MINIO_ROOT_USER
@@ -19,6 +17,11 @@ tenant:
       secretKeyRef:
         name: minio-access-key
         key: AWS_SECRET_ACCESS_KEY
+  features:
+    domains:
+      minio:
+      - s3.dev.skyloft.cc
+      console: s3.dev.skyloft.cc
   buckets:
   - name: backup
     region: skyloft
