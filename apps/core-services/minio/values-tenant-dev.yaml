@@ -26,6 +26,7 @@ tenant:
   - name: backup
     region: skyloft
     objectLock: false
+  configuration: null
   pools:
   - servers: 4
     name: pod
