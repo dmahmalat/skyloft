@@ -1,5 +1,7 @@
 fullnameOverride: minio-tenant
 
+secrets: null
+
 tenant:
   name: minio-skyloft
   env:
