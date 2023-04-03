@@ -23,7 +23,6 @@ persistence:
 
 tls:
   enabled: true
-  existingSecret: cert-dev.skyloft.cc
 
 defaultBuckets: "skyloft"
 
