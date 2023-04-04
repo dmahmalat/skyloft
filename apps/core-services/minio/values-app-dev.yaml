@@ -13,7 +13,7 @@ resources:
     memory: null
 
 tls:
-  enabled: false #TEST
+  enabled: true #TEST
 
 environment:
   MINIO_SERVER_URL: https://s3.dev.skyloft.cc/
