@@ -14,6 +14,8 @@ service:
       traefik.ingress.kubernetes.io/service.serverstransport: core-services-cockroachdb@kubernetescrd
 
 init:
+  jobAnnotations:
+  - argocd.argoproj.io/hook: Sync
   tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
