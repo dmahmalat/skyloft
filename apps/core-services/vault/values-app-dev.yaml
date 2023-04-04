@@ -3,20 +3,8 @@ fullnameOverride: vault
 ui:
   enabled: true
 
-csi:
-  enabled: true
-
 injector:
-  replicas: 2
-  tolerations:
-  - key: CriticalAddonsOnly
-    operator: Exists
-  - key: node-role.kubernetes.io/control-plane
-    operator: Exists
-    effect: NoSchedule
-  - key: node-role.kubernetes.io/master
-    operator: Exists
-    effect: NoSchedule
+  enabled: false
 
 server:
   ha:
@@ -37,6 +25,7 @@ server:
     effect: NoSchedule
 
 csi:
+  enabled: true
   pod:
     tolerations:
     - key: CriticalAddonsOnly
