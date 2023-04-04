@@ -1,0 +1,47 @@
+fullnameOverride: vault
+
+ui:
+  enabled: true
+
+csi:
+  enabled: true
+
+injector:
+  replicas: 2
+  tolerations:
+  - key: CriticalAddonsOnly
+    operator: Exists
+  - key: node-role.kubernetes.io/control-plane
+    operator: Exists
+    effect: NoSchedule
+  - key: node-role.kubernetes.io/master
+    operator: Exists
+    effect: NoSchedule
+
+server:
+  ha:
+    enabled: true
+    replicas: 3
+    raft:
+      enabled: true
+  tolerations:
+  - key: CriticalAddonsOnly
+    operator: Exists
+  - key: node-role.kubernetes.io/control-plane
+    operator: Exists
+    effect: NoSchedule
+  - key: node-role.kubernetes.io/master
+    operator: Exists
+    effect: NoSchedule
+
+csi:
+  pod:
+    tolerations:
+    - key: CriticalAddonsOnly
+      operator: Exists
+    - key: node-role.kubernetes.io/control-plane
+      operator: Exists
+      effect: NoSchedule
+    - key: node-role.kubernetes.io/master
+      operator: Exists
+      effect: NoSchedule

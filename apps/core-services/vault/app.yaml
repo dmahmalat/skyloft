@@ -1,0 +1,11 @@
+appname: vault
+namespace: core-services
+project: core-services
+label: app
+order: 2
+
+chart:
+  repo: https://helm.releases.hashicorp.com
+  version: v0.23.0
+  name: vault
+  namespace: core-services
