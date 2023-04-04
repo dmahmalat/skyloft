@@ -9,8 +9,8 @@ persistence:
   size: 2Gi
 
 environment:
-- MINIO_SERVER_URL: https://s3.dev.skyloft.cc/
-- MINIO_BROWSER_REDIRECT_URL: https://s3.dev.skyloft.cc/dashboard/
+  MINIO_SERVER_URL: https://s3.dev.skyloft.cc/
+  MINIO_BROWSER_REDIRECT_URL: https://s3.dev.skyloft.cc/dashboard/
 
 tls:
   enabled: false #TEST
