@@ -8,6 +8,10 @@ pools: 1
 persistence:
   size: 2Gi
 
+resources:
+  requests:
+    memory: null
+
 tls:
   enabled: false #TEST
 
