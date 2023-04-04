@@ -15,7 +15,7 @@ service:
 
 init:
   jobAnnotations:
-  - argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook: Sync
   tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
