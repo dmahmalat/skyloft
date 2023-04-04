@@ -7,8 +7,8 @@ metadata:
     chart: {{ include "minio-resources.chart" . }}
 spec:
   schedule: {{ .Values.backup.cron }}
-  successfulJobsHistoryLimit: 24
-  failedJobsHistoryLimit: 5
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
