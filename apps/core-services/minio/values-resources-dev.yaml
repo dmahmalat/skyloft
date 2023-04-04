@@ -6,7 +6,7 @@ ingress:
 backup:
   cron: "45 * * * *"
   src:
-    bucket: skyloft
+    bucket: backup
     region: skyloft
   dst:
     bucket: skyloft-storage-backup-dev
