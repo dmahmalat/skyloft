@@ -6,10 +6,6 @@ injector:
 server:
   dataStorage:
     size: 1Gi
-  extraSecretEnvironmentVars:
-  - envName: VAULT_CACERT
-    secretName: cockroachdb-client-secret
-    secretKey: ca.crt
   ha:
     enabled: true
     replicas: 3
@@ -21,7 +17,7 @@ server:
         cluster_address = "[::]:8201"
       }
       storage "cockroachdb" {
-        connection_url = "postgres://Larry:potate@cockroachdb-public.core-services.svc.cluster.local:26257/vault?sslmode=verify-full"
+        connection_url = "postgres://Larry:potate@cockroachdb-public.core-services.svc.cluster.local:26257/vault?sslmode=require"
         ha_enabled     = "true"
       }
       service_registration "kubernetes" {}
