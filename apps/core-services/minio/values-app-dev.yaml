@@ -1,0 +1,39 @@
+fullnameOverride: minio
+
+mode: distributed
+replicas: 4
+drivesPerNode: 1
+pools: 1
+
+persistence:
+  size: 2Gi
+
+environment:
+  - MINIO_SERVER_URL: https://s3.dev.skyloft.cc/
+  - MINIO_BROWSER_REDIRECT_URL: https://s3.dev.skyloft.cc/dashboard/
+
+tls:
+  enabled: false #TEST
+
+users:
+- accessKey: 1Dq8NVXRWmsRuPDP #TEST
+  existingSecret: minio-access-key
+  existingSecretKey: AWS_SECRET_ACCESS_KEY
+  policy: readwrite
+
+buckets:
+- name: backup
+  policy: none
+  purge: false
+  versioning: false
+  objectlocking: false
+
+tolerations:
+- key: CriticalAddonsOnly
+  operator: Exists
+- key: node-role.kubernetes.io/control-plane
+  operator: Exists
+  effect: NoSchedule
+- key: node-role.kubernetes.io/master
+  operator: Exists
+  effect: NoSchedule
