@@ -1,10 +1,10 @@
+fullnameOverride: coredns
+k8sAppLabelOverride: kube-dns
+
 replicaCount: 2
 
 hpa:
   minReplicas: 2
-
-fullnameOverride: coredns
-k8sAppLabelOverride: kube-dns
 
 service:
   name: kube-dns

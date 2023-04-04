@@ -1,6 +1,6 @@
-replicas: 2
-
 fullnameOverride: metrics-server
+
+replicas: 2
 
 tolerations:
 - key: CriticalAddonsOnly

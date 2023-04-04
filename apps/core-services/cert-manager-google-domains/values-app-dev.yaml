@@ -1,5 +1,6 @@
-replicaCount: 2
 fullnameOverride: cert-manager-google-domains
+
+replicaCount: 2
 
 certManager:
   serviceAccountName: cert-manager

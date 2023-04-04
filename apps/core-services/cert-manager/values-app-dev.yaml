@@ -1,7 +1,7 @@
+fullnameOverride: cert-manager
+
 installCRDs: true
 replicaCount: 2
-
-fullnameOverride: cert-manager
 
 tolerations:
 - key: CriticalAddonsOnly

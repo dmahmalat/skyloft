@@ -1,11 +1,11 @@
+fullnameOverride: cockroachdb
+
 conf:
   cluster-name: skyloft
 
 storage:
   persistentVolume:
     size: 5Gi
-
-fullnameOverride: cockroachdb
 
 service:
   public:
@@ -14,6 +14,8 @@ service:
       traefik.ingress.kubernetes.io/service.serverstransport: core-services-cockroachdb@kubernetescrd
 
 init:
+  provisioning:
+    enabled: true
   tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
