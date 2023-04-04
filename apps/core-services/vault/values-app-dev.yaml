@@ -6,12 +6,10 @@ injector:
 server:
   dataStorage:
     size: 1Gi
-  extraEnvironmentVars:
-  - name: VAULT_CACERT
-    valueFrom:
-      secretKeyRef:
-        name: cockroachdb-client-secret
-        key: ca.crt
+  extraSecretEnvironmentVars:
+  - envName: VAULT_CACERT
+    secretName: cockroachdb-client-secret
+    secretKey: ca.crt
   ha:
     enabled: true
     replicas: 3
