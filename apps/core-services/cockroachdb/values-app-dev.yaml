@@ -3,7 +3,7 @@ conf:
 
 storage:
   persistentVolume:
-    size: 1Gi
+    size: 10Gi
 
 fullnameOverride: cockroachdb
 
