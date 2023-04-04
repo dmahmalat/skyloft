@@ -8,12 +8,12 @@ pools: 1
 persistence:
   size: 2Gi
 
+tls:
+  enabled: false #TEST
+
 environment:
   MINIO_SERVER_URL: https://s3.dev.skyloft.cc/
   MINIO_BROWSER_REDIRECT_URL: https://s3.dev.skyloft.cc/dashboard/
-
-tls:
-  enabled: false #TEST
 
 existingSecret: minio-access-key
 
