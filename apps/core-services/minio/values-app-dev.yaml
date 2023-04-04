@@ -13,7 +13,7 @@ resources:
     memory: null
 
 tls:
-  enabled: true #TEST
+  enabled: false
 
 environment:
   MINIO_SERVER_URL: https://s3.dev.skyloft.cc/
@@ -22,7 +22,7 @@ environment:
 existingSecret: minio-access-key
 
 users:
-- accessKey: potate #TEST
+- accessKey: backup
   existingSecret: minio-access-key
   existingSecretKey: AWS_SECRET_ACCESS_KEY
   policy: readwrite
