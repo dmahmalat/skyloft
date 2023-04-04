@@ -16,6 +16,15 @@ service:
 init:
   jobAnnotations:
     argocd.argoproj.io/hook: Sync
+  provisioning:
+    enabled: true
+    users:
+    - name: Larry
+      password: notreal
+    databases:
+    - name: vault
+      owners:
+      - Larry
   tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
