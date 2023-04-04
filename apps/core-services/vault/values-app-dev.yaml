@@ -4,8 +4,6 @@ injector:
   enabled: false
 
 server:
-  dataStorage:
-    size: 1Gi
   ha:
     enabled: true
     replicas: 3
