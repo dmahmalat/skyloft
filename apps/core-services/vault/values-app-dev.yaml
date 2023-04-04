@@ -1,8 +1,5 @@
 fullnameOverride: vault
 
-ui:
-  enabled: true
-
 injector:
   enabled: false
 
