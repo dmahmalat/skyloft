@@ -22,7 +22,7 @@ environment:
 existingSecret: minio-access-key
 
 users:
-- accessKey: 1Dq8NVXRWmsRuPDP #TEST
+- accessKey: potate #TEST
   existingSecret: minio-access-key
   existingSecretKey: AWS_SECRET_ACCESS_KEY
   policy: readwrite
