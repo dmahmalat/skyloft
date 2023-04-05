@@ -19,12 +19,11 @@ init:
   provisioning:
     enabled: true
     users:
-    - name: Larry
-      password: notreal
+    - name: vault
     databases:
     - name: vault
       owners:
-      - Larry
+      - vault
   tolerations:
   - key: CriticalAddonsOnly
     operator: Exists
