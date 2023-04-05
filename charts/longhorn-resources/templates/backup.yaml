@@ -9,6 +9,6 @@ spec:
   cron: {{ .Values.backup.cron }}
   task: "backup"
   groups:
-  - default
+  - backup
   retain: 1
   concurrency: 1
