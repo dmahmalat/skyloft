@@ -157,12 +157,8 @@ spec:
 
                       {{- range $user := .Values.init.provisioning.users }}
                         CREATE USER IF NOT EXISTS {{ $user.name }} WITH
-                        {{- if $user.password }}
-                          PASSWORD '${{ $user.name }}_PASSWORD'
-                        {{- else }}
-                          PASSWORD null
-                        {{- end }}
-                          {{ join " " $user.options }}
+                        PASSWORD '${{ $user.name }}_PASSWORD'
+                        {{ join " " $user.options }}
                         ;
                       {{- end }}
 
@@ -217,13 +213,11 @@ spec:
           env:
         {{- $secretName := printf "%s-init" (include "cockroachdb.fullname" .) }}
         {{- range $user := .Values.init.provisioning.users }}
-        {{- if $user.password }}
           - name: {{ $user.name }}_PASSWORD
             valueFrom:
               secretKeyRef:
                 name: {{ $secretName }}
                 key: {{ $user.name }}-password
-        {{- end }}
         {{- end }}
         {{- range $clusterSetting, $clusterSettingValue := .Values.init.provisioning.clusterSettings }}
         {{- if $clusterSettingValue }}
