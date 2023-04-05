@@ -5,6 +5,13 @@ defaultSettings:
   orphanAutoDeletion: true
   taintToleration: "CriticalAddonsOnly=true:NoExecute"
 
+persistence:
+  recurringJobSelector:
+    enable: true
+    jobList:
+    - name: backup
+      isGroup: true
+
 longhornDriver:
   tolerations:
   - key: CriticalAddonsOnly
