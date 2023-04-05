@@ -1,0 +1,44 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: minio-restore
+  namespace: core-services
+  labels:
+    chart: {{ include "minio-resources.chart" . }}
+spec:
+  suspend: true
+  schedule: "0 0 1 1 0"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          {{- if .Values.tolerations }}
+          tolerations: {{- include "common.tplvalues.render" (dict "value" .Values.tolerations "context" .) | nindent 12 }}
+          {{- end }}
+          restartPolicy: Never
+          containers:
+          - name: rclone
+            image: {{ .Values.image }}
+            args: [ "sync", "$(DST_REMOTE):$(DST_PATH)", "$(SRC_REMOTE):$(SRC_PATH)" ]
+            envFrom:
+            - configMapRef:
+                name: minio-backup
+            env:
+            - name: RCLONE_CONFIG_SRC_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secrets.minio }}
+                  key: AWS_ACCESS_KEY_ID
+            - name: RCLONE_CONFIG_SRC_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secrets.minio }}
+                  key: AWS_SECRET_ACCESS_KEY
+            - name: RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secrets.gcs }}
+                  key: GCS_ACCESS_KEY
