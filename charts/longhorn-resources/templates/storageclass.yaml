@@ -9,8 +9,8 @@ allowVolumeExpansion: true
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
 parameters:
-  numberOfReplicas: 3
-  staleReplicaTimeout: 30
+  numberOfReplicas: "3"
+  staleReplicaTimeout: "30"
   fromBackup: ""
   fsType: ext4
   recurringJobSelector: '[{"name":"nobackup", "isGroup":true}]'
