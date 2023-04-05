@@ -407,6 +407,7 @@ init:
 
   provisioning:
     enabled: false
+    createSecret: false
     # https://www.cockroachlabs.com/docs/stable/cluster-settings.html
     clusterSettings:
       # cluster.organization: "'FooCorp - Local Testing'"
