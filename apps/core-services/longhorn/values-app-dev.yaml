@@ -8,9 +8,7 @@ defaultSettings:
 persistence:
   recurringJobSelector:
     enable: true
-    jobList:
-    - name: backup
-      isGroup: true
+    jobList: '[{"name":"backup", "isGroup":true}]'
 
 longhornDriver:
   tolerations:
