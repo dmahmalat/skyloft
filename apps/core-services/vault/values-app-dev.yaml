@@ -23,8 +23,8 @@ server:
       secretName: vault-cockroachdb-connection
       defaultMode: 420
   volumeMounts:
-  - mountPath: /vault/config/vault-storage-config
-    name: vault-storage-config
+  - name: vault-storage-config
+    mountPath: /vault/config/vault-storage-config
     readOnly: true
   extraArgs: "-config=/vault/config/vault-storage-config/config.hcl"
   tolerations:
