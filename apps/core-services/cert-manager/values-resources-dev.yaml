@@ -1,8 +1,9 @@
 email: d@mahmalat.com
+groupName: acmedns.googleapis.com
 domains:
-  - topName: skyloft.cc
-    name: dev.skyloft.cc
-    eabId: a5427bdfd10d7633e1348dfb64bc277c
+- topName: skyloft.cc
+  name: dev.skyloft.cc
+  eabId: a5427bdfd10d7633e1348dfb64bc277c
 
 secrets:
   key: cert-domain-tls-key

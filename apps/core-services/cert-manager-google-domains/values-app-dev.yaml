@@ -1,4 +1,5 @@
 fullnameOverride: cert-manager-google-domains
+groupName: acmedns.googleapis.com
 
 replicaCount: 2
 

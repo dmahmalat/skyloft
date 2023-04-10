@@ -19,7 +19,7 @@ spec:
     solvers:
     - dns01:
         webhook:
-          groupName: acmedns.googleapis.com
+          groupName: {{ $.Values.groupName }}
           solverName: google-domains
           config:
             apiUrl: {{ $.Values.google.acmeApiUrl }}
