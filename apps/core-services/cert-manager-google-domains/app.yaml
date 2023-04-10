@@ -5,7 +5,7 @@ label: app
 order: 1
 
 chart:
-  repo: ghcr.io
+  repo: ghcr.io/dmahmalat/charts
   version: v1.1.2
-  name: dmahmalat/charts/cert-manager-webhook-google-domains
+  name: cert-manager-webhook-google-domains
   namespace: core-services
