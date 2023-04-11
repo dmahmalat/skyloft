@@ -48,7 +48,7 @@ jobs:
           VERSION=$(yq -r '.version' Chart.yaml)
           
           # Get tags
-          TAGS=$(curl -sS -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://${REGISTRY}/v2/${REPO_OWNER}/charts/${NAME}/tags/list | jq .tags)
+          TAGS=$(curl -sS -H "Authorization: Bearer $(echo ${{ secrets.GITHUB_TOKEN }} | base64)" https://${REGISTRY}/v2/${REPO_OWNER}/charts/${NAME}/tags/list | jq .tags)
           
           for tag in $(echo "${TAGS}" | jq -r '.[]'); do
             if [ "${tag}" == "${VERSION}" ]; then
