@@ -6,6 +6,6 @@ order: 2
 
 chart:
   repo: https://helm.releases.hashicorp.com
-  version: v0.23.0
+  version: 0.23.0
   name: vault
   namespace: core-services

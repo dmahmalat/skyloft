@@ -6,6 +6,6 @@ order: 2
 
 chart:
   repo: https://charts.min.io
-  version: v5.0.7
+  version: 5.0.7
   name: minio
   namespace: core-services

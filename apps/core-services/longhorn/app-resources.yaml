@@ -5,7 +5,7 @@ label: resources
 order: 2
 
 chart:
-  repo: https://dmahmalat.github.io/charts
-  version: v1.0.0
+  repo: ghcr.io/dmahmalat/charts
+  version: 0.0.1
   name: longhorn-resources
   namespace: core-services
