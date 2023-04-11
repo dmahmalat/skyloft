@@ -3,11 +3,11 @@ type: application
 name: cockroachdb-resources
 description: Skyloft Kubernetes Infrastructure
 
-version: 1.0.0
+version: 0.0.1
 appVersion: 1.0.0
 
 icon: https://cncf-branding.netlify.app/img/projects/kubernetes/icon/color/kubernetes-icon-color.svg
-home: https://github.com/dmahmalat/skyloft/charts
+home: https://ghcr.io/dmahmalat/charts
 
 sources:
 - https://github.com/dmahmalat/skyloft
