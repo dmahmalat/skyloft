@@ -1,6 +1,6 @@
 appname: cert-manager-google-domains
 namespace: core-services
-project: default
+project: core-services
 label: app
 order: 1
 
@@ -8,4 +8,4 @@ chart:
   repo: ghcr.io/dmahmalat/charts
   version: 1.1.3
   name: cert-manager-webhook-google-domains
-  namespace: default
+  namespace: core-services
