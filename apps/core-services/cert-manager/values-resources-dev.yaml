@@ -3,7 +3,7 @@ groupName: acmedns.googleapis.com
 domains:
 - topName: skyloft.cc
   name: dev.skyloft.cc
-  eabId: a5427bdfd10d7633e1348dfb64bc277c
+  eabId: a5427bdfd10d7633b3a2e2affac531da
 
 secrets:
   key: cert-domain-tls-key
