@@ -1,1 +1,7 @@
 landscape: dev
+
+dnsUpdate:
+  domain: dev-master.skyloft.cc
+  secret: master-dns-update
+  image: docker.io/mwendler/wget
+  cron: "* * * * *"

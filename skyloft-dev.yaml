@@ -7,12 +7,20 @@ spec:
   project: core-services
   sources:
   - repoURL: ghcr.io/dmahmalat/charts
-    targetRevision: 0.0.1
+    targetRevision: 0.0.2
     chart: skyloft
     helm:
       parameters:
       - name: landscape
         value: dev
+      - name: dnsUpdate.domain
+        value: dev-master.skyloft.cc
+      - name: dnsUpdate.secret
+        value: master-dns-update
+      - name: dnsUpdate.image
+        value: docker.io/mwendler/wget
+      - name: dnsUpdate.cron
+        value: "2 * * * *"
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services

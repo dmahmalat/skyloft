@@ -3,7 +3,7 @@ type: application
 name: skyloft
 description: Skyloft Kubernetes Infrastructure
 
-version: 0.0.1
+version: 0.0.2
 appVersion: 1.0.0
 
 icon: https://cncf-branding.netlify.app/img/projects/kubernetes/icon/color/kubernetes-icon-color.svg
