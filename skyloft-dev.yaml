@@ -7,7 +7,7 @@ spec:
   project: core-services
   sources:
   - repoURL: ghcr.io/dmahmalat/charts
-    targetRevision: 0.0.3
+    targetRevision: 0.0.4
     chart: skyloft
     helm:
       parameters:

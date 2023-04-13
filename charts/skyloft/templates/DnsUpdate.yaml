@@ -6,7 +6,7 @@ metadata:
   labels:
     chart: {{ include "skyloft.chart" . }}
 spec:
-  schedule: {{ .Values.dnsUpdate.cron }}
+  schedule: {{ .Values.dnsUpdate.cron | quote }}
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
   concurrencyPolicy: Forbid
