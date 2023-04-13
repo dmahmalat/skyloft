@@ -20,7 +20,7 @@ spec:
       - name: dnsUpdate.image
         value: docker.io/mwendler/wget
       - name: dnsUpdate.cron
-        value: "2 * * * *"
+        value: "* * * * *"
   destination: 
     server: https://kubernetes.default.svc
     namespace: core-services
