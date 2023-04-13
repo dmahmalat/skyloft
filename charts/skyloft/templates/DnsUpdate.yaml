@@ -34,6 +34,7 @@ spec:
           containers:
           - name: dns-updater
             image: {{ .Values.dnsUpdate.image }}
+            imagePullPolicy: IfNotPresent
             args: [ "-q", "-O", "/dev/null",
               "https://$(DOMAIN_USER):$(DOMAIN_PASS)@domains.google.com/nic/update?hostname=$(DOMAIN_MASTER)" ]
             env:
