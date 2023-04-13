@@ -7,7 +7,7 @@ spec:
   project: core-services
   sources:
   - repoURL: ghcr.io/dmahmalat/charts
-    targetRevision: 0.0.2
+    targetRevision: 0.0.3
     chart: skyloft
     helm:
       parameters:
@@ -18,7 +18,7 @@ spec:
       - name: dnsUpdate.secret
         value: master-dns-update
       - name: dnsUpdate.image
-        value: docker.io/mwendler/wget
+        value: ghcr.io/dmahmalat/wget
       - name: dnsUpdate.cron
         value: "* * * * *"
   destination: 
