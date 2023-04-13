@@ -50,13 +50,16 @@ jobs:
           # Get tags
           TAGS=$(curl -sS -H "Authorization: Bearer $(echo ${{ secrets.GITHUB_TOKEN }} | base64)" https://${REGISTRY}/v2/${REPO_OWNER}/charts/${NAME}/tags/list | jq .tags)
           
+          # Look for a new version
+          FOUND=0
           for tag in $(echo "${TAGS}" | jq -r '.[]'); do
             if [ "${tag}" == "${VERSION}" ]; then
               FOUND=1
             fi
           done
           
-          if [ ! ${FOUND} ]; then
+          # Package the new version
+          if [ ${FOUND} -ne 1 ]; then
             helm package .
             PKG_NAME=`ls *.tgz`
             helm push ${PKG_NAME} oci://${REGISTRY}/${REPO_OWNER}/charts
