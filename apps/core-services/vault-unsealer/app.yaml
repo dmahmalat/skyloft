@@ -6,6 +6,6 @@ order: 1
 
 chart:
   repo: ghcr.io/dmahmalat/charts
-  version: 0.0.1
+  version: 0.0.2
   name: vault-unsealer
   namespace: core-services
