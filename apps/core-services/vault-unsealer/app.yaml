@@ -2,7 +2,7 @@ appname: vault-unsealer
 namespace: core-services
 project: core-services
 label: app
-order: 1
+order: 2
 
 chart:
   repo: ghcr.io/dmahmalat/charts
