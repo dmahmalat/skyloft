@@ -4,7 +4,7 @@ apiServer: https://kubernetes.default.svc
 
 image:
   repository: ghcr.io/dmahmalat/longhorn-restorer
-  tag: 0.0.7
+  tag: 0.0.8
   pullPolicy: IfNotPresent
 
 tolerations:
