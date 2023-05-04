@@ -16,16 +16,13 @@ spec:
     type: RollingSync
     rollingSync:
       steps:
+      {{- range $i, $e := untilStep 1 5 1 }}
       - matchExpressions:
         - key: order
           operator: In
           values:
-          - "1"
-      - matchExpressions:
-        - key: order
-          operator: In
-          values:
-          - "2"
+          - {{ $i | quote }}
+      {{- end }}
   template:
     metadata:
       name: '{{`{{appname}}`}}'
