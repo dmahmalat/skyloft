@@ -6,6 +6,6 @@ order: 2
 
 chart:
   repo: ghcr.io/dmahmalat/charts
-  version: 0.0.1
+  version: 0.0.2
   name: longhorn-restorer
   namespace: core-services
