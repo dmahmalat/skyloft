@@ -1,0 +1,11 @@
+appname: longhorn-restorer
+namespace: core-services
+project: core-services
+label: app
+order: 2
+
+chart:
+  repo: ghcr.io/dmahmalat/charts
+  version: 0.0.1
+  name: longhorn-restorer
+  namespace: core-services
