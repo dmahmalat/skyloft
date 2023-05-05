@@ -2,7 +2,7 @@ appname: vault
 namespace: core-services
 project: core-services
 label: app
-order: 3
+order: 4
 
 chart:
   repo: https://helm.releases.hashicorp.com

@@ -2,7 +2,7 @@ appname: vault-resources
 namespace: core-services
 project: core-services
 label: resources
-order: 3
+order: 4
 
 chart:
   repo: ghcr.io/dmahmalat/charts
